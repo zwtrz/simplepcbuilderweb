@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Motherboard Selector | Simple PC Parts Configurator</title>
+  <link rel="stylesheet" href="part-pages.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <h1>Motherboard Selector</h1>
+      <a class="back-link" href="index.html">Back to Home</a>
+    </header>
+
+    <section class="panel-wrap selector-block">
+      <p class="prompt">Choose a motherboard platform vendor first, then select the socket family.</p>
+
+      <div class="vendor-row" role="tablist" aria-label="Motherboard vendor selector">
+        <button class="vendor-btn" type="button" data-vendor="amd">AMD</button>
+        <button class="vendor-btn" type="button" data-vendor="intel">Intel</button>
+      </div>
+
+      <section class="panel" data-panel="amd" aria-hidden="true">
+        <div class="option-grid">
+          <article class="option-card">
+            <h3>AM4</h3>
+            <p>For Ryzen 1000 through Ryzen 5000 series CPUs.</p>
+          </article>
+          <article class="option-card">
+            <h3>AM5</h3>
+            <p>For Ryzen 7000 through Ryzen 9000 series CPUs.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" data-panel="intel" aria-hidden="true">
+        <div class="option-grid">
+          <article class="option-card">
+            <h3>LGA 1200</h3>
+            <p>For Intel 10th and 11th Gen CPUs.</p>
+          </article>
+          <article class="option-card">
+            <h3>LGA 1700</h3>
+            <p>For Intel 12th through 14th Gen CPUs.</p>
+          </article>
+          <article class="option-card">
+            <h3>LGA 1851</h3>
+            <p>For Intel Core Ultra series CPUs.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="part-pages.js"></script>
+</body>
+</html>

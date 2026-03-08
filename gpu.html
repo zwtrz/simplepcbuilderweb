@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPU Selector | Simple PC Parts Configurator</title>
+  <link rel="stylesheet" href="part-pages.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="topbar">
+      <h1>GPU Selector</h1>
+      <a class="back-link" href="index.html">Back to Home</a>
+    </header>
+
+    <section class="panel-wrap selector-block">
+      <p class="prompt">Choose a GPU brand first. Detailed model filters can be added next.</p>
+
+      <div class="vendor-row" role="tablist" aria-label="GPU vendor selector">
+        <button class="vendor-btn" type="button" data-vendor="nvidia">NVIDIA</button>
+        <button class="vendor-btn" type="button" data-vendor="intel">Intel</button>
+        <button class="vendor-btn" type="button" data-vendor="amd">AMD</button>
+      </div>
+
+      <section class="panel" data-panel="nvidia" aria-hidden="true">
+        <div class="option-grid">
+          <article class="option-card">
+            <h3>NVIDIA</h3>
+            <p>Brand selector ready. Model and generation options can be added in the next step.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" data-panel="intel" aria-hidden="true">
+        <div class="option-grid">
+          <article class="option-card">
+            <h3>Intel</h3>
+            <p>Brand selector ready. Model and generation options can be added in the next step.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="panel" data-panel="amd" aria-hidden="true">
+        <div class="option-grid">
+          <article class="option-card">
+            <h3>AMD</h3>
+            <p>Brand selector ready. Model and generation options can be added in the next step.</p>
+          </article>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <script src="part-pages.js"></script>
+</body>
+</html>

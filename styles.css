@@ -27,7 +27,8 @@ body {
     var(--bg);
   color: var(--text);
   opacity: 0;
-  animation: pageFadeIn 0.8s ease-out forwards;
+  animation: pageFadeIn 0.45s ease-out forwards;
+  transition: opacity 180ms ease;
 }
 
 .page {
@@ -301,3 +302,13 @@ h1 {
     scroll-behavior: auto !important;
   }
 }
+
+body.page-leave {
+  opacity: 0;}
+
+
+
+
+
+
+
