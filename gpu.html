@@ -6,7 +6,7 @@
   <title>GPU Selector | Simple PC Parts Configurator</title>
   <link rel="stylesheet" href="part-pages.css" />
 </head>
-<body>
+<body data-page-type="gpu">
   <main class="page">
     <header class="topbar">
       <h1>GPU Selector</h1>
@@ -14,7 +14,7 @@
     </header>
 
     <section class="panel-wrap selector-block">
-      <p class="prompt">Choose a GPU brand first. Detailed model filters can be added next.</p>
+      <p class="prompt">Choose vendor first. Then click a generation tile to load the graphics card list.</p>
 
       <div class="vendor-row" role="tablist" aria-label="GPU vendor selector">
         <button class="vendor-btn" type="button" data-vendor="nvidia">NVIDIA</button>
@@ -23,34 +23,23 @@
       </div>
 
       <section class="panel" data-panel="nvidia" aria-hidden="true">
-        <div class="option-grid">
-          <article class="option-card">
-            <h3>NVIDIA</h3>
-            <p>Brand selector ready. Model and generation options can be added in the next step.</p>
-          </article>
-        </div>
+        <div class="option-grid"></div>
+        <div class="parts-output" aria-live="polite"></div>
       </section>
 
       <section class="panel" data-panel="intel" aria-hidden="true">
-        <div class="option-grid">
-          <article class="option-card">
-            <h3>Intel</h3>
-            <p>Brand selector ready. Model and generation options can be added in the next step.</p>
-          </article>
-        </div>
+        <div class="option-grid"></div>
+        <div class="parts-output" aria-live="polite"></div>
       </section>
 
       <section class="panel" data-panel="amd" aria-hidden="true">
-        <div class="option-grid">
-          <article class="option-card">
-            <h3>AMD</h3>
-            <p>Brand selector ready. Model and generation options can be added in the next step.</p>
-          </article>
-        </div>
+        <div class="option-grid"></div>
+        <div class="parts-output" aria-live="polite"></div>
       </section>
     </section>
   </main>
 
+  <script src="catalog-data.js"></script>
   <script src="part-pages.js"></script>
 </body>
 </html>
