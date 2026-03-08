@@ -1,4 +1,4 @@
-window.catalogData = {
+﻿window.catalogData = {
   "cpu": {
     "amd": {
       "options": [
@@ -227,40 +227,20 @@ window.catalogData = {
     "amd": {
       "options": [
         {
-          "id": "am4",
-          "label": "AM4",
-          "subtitle": "AM4 chipset families and CPU compatibility",
+          "id": "a320",
+          "label": "A320",
+          "subtitle": "Mainstream AM4 entry chipset",
           "sections": [
             {
-              "title": "Entry-Level AM4 (A320 / A520, often called Ax20 class)",
+              "title": "Socket",
               "items": [
-                "Many budget boards ship with 2 DIMM slots only",
-                "VRM heatsinks are often absent or very small on lower-end models",
-                "Best paired with lower-power CPUs unless board VRM quality is verified"
+                "AM4"
               ]
             },
             {
-              "title": "Mainstream AM4 Boards",
+              "title": "CPU Support",
               "items": [
-                "B450 and B550 are common value-performance choices",
-                "Usually 4 DIMM slots on ATX/mATX models",
-                "Partial/full VRM heatsinks are much more common than Ax20 boards"
-              ]
-            },
-            {
-              "title": "Performance AM4 Boards",
-              "items": [
-                "X470 and X570 target heavier CPUs and overclocking workloads",
-                "Stronger power delivery and larger VRM heatsinks",
-                "More PCIe and I/O options depending on model tier"
-              ]
-            },
-            {
-              "title": "CPU Compatibility Range",
-              "items": [
-                "Ryzen 1000 through Ryzen 5000 series",
-                "Final support depends on motherboard BIOS version",
-                "Some early boards require selective/beta BIOS for later Ryzen generations"
+                "Ryzen 1000 to Ryzen 5000 (BIOS dependent)"
               ]
             }
           ],
@@ -268,47 +248,442 @@ window.catalogData = {
             {
               "label": "AMD AM4 Chipset CPU Compatibility",
               "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
             }
           ]
         },
         {
-          "id": "am5",
-          "label": "AM5",
-          "subtitle": "AM5 chipset families and CPU compatibility",
+          "id": "b350",
+          "label": "B350",
+          "subtitle": "Mainstream AM4 chipset",
           "sections": [
             {
-              "title": "Entry-Level AM5",
+              "title": "Socket",
               "items": [
-                "A620 and lower-cost B840/B850 variants prioritize baseline features",
-                "Some entry mATX boards can be dual-DIMM and lighter on VRM cooling",
-                "Good for budget or mid-range Ryzen builds with careful board selection"
+                "AM4"
               ]
             },
             {
-              "title": "Mainstream AM5",
+              "title": "CPU Support",
               "items": [
-                "B650/B650E and stronger B850 boards are common all-round choices",
-                "Typically better VRM heatsinks, memory support, and expansion",
-                "Balanced for Ryzen 5 and Ryzen 7 class systems"
-              ]
-            },
-            {
-              "title": "High-End AM5",
-              "items": [
-                "X670E/X670 and X870E/X870 focus on premium power delivery and connectivity",
-                "Heavier VRM cooling and more expansion lanes/USB options",
-                "Best suited for Ryzen 9 and sustained heavy workloads"
-              ]
-            },
-            {
-              "title": "CPU Compatibility Range",
-              "items": [
-                "Ryzen 7000, 8000, and 9000 series on AM5",
-                "All AM5 motherboards support AM5 processors (BIOS updates may be required on older stock)"
+                "Ryzen 1000 to Ryzen 5000 (BIOS dependent)"
               ]
             }
           ],
           "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "x370",
+          "label": "X370",
+          "subtitle": "Performance AM4 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM4"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 1000 to Ryzen 5000 (BIOS dependent)"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "b450",
+          "label": "B450",
+          "subtitle": "Mainstream AM4 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM4"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 1000 to Ryzen 5000 (BIOS dependent)"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "x470",
+          "label": "X470",
+          "subtitle": "Performance AM4 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM4"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 1000 to Ryzen 5000 (BIOS dependent)"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "a520",
+          "label": "A520",
+          "subtitle": "Mainstream AM4 entry chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM4"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 3000 to Ryzen 5000 (board dependent)"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "b550",
+          "label": "B550",
+          "subtitle": "Mainstream AM4 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM4"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 3000 to Ryzen 5000 (board dependent)"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "x570",
+          "label": "X570",
+          "subtitle": "Performance AM4 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM4"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 2000/3000/5000 (board dependent)"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "a620",
+          "label": "A620",
+          "subtitle": "Entry AM5 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM5"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 7000, 8000, and 9000 series"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "b650",
+          "label": "B650",
+          "subtitle": "Mainstream AM5 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM5"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 7000, 8000, and 9000 series"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "b650e",
+          "label": "B650E",
+          "subtitle": "Mainstream AM5 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM5"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 7000, 8000, and 9000 series"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "x670",
+          "label": "X670",
+          "subtitle": "Performance AM5 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM5"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 7000, 8000, and 9000 series"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "x670e",
+          "label": "X670E",
+          "subtitle": "Performance AM5 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM5"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 7000, 8000, and 9000 series"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "b850",
+          "label": "B850",
+          "subtitle": "Mainstream AM5 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM5"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 7000, 8000, and 9000 series"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "x870",
+          "label": "X870",
+          "subtitle": "Performance AM5 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM5"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 7000, 8000, and 9000 series"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
+            {
+              "label": "AMD AM5 Chipset Compatibility",
+              "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
+            }
+          ]
+        },
+        {
+          "id": "x870e",
+          "label": "X870E",
+          "subtitle": "Performance AM5 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "AM5"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Ryzen 7000, 8000, and 9000 series"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "AMD AM4 Chipset CPU Compatibility",
+              "url": "https://www.amd.com/en/products/processors/chipsets/am4.html"
+            },
             {
               "label": "AMD AM5 Chipset Compatibility",
               "url": "https://www.amd.com/es/products/processors/chipsets/am5.html"
@@ -320,23 +695,20 @@ window.catalogData = {
     "intel": {
       "options": [
         {
-          "id": "lga1200",
-          "label": "LGA 1200",
-          "subtitle": "10th/11th Gen motherboard ecosystem",
+          "id": "h410",
+          "label": "H410",
+          "subtitle": "Entry LGA1200 chipset",
           "sections": [
             {
-              "title": "Typical LGA1200 Chipsets",
+              "title": "Socket",
               "items": [
-                "Z590, H570, B560, H510",
-                "Z490, H470, B460, H410",
-                "W580 / W480 (workstation segments)"
+                "LGA1200"
               ]
             },
             {
-              "title": "CPU Range",
+              "title": "CPU Support",
               "items": [
-                "Intel 10th and 11th Gen desktop processors",
-                "Pentium Gold and Celeron desktop SKUs in supported boards"
+                "Intel 10th and 11th Gen desktop CPUs"
               ]
             }
           ],
@@ -344,74 +716,572 @@ window.catalogData = {
             {
               "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
               "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
-            }
-          ]
-        },
-        {
-          "id": "lga1700",
-          "label": "LGA 1700",
-          "subtitle": "12th/13th/14th Gen motherboard ecosystem",
-          "sections": [
-            {
-              "title": "Entry-Level LGA1700",
-              "items": [
-                "H610 boards can be very minimal and often only 2 DIMM slots on compact models",
-                "VRM heatsinks can be absent on lower-cost variants",
-                "Best for lower-power CPU pairings"
-              ]
             },
-            {
-              "title": "Mainstream LGA1700",
-              "items": [
-                "B660/B760 boards are balanced for most users",
-                "Commonly include better VRM cooling and 4-DIMM layouts",
-                "Good fit for Core i5 and Core i7 class builds"
-              ]
-            },
-            {
-              "title": "Performance LGA1700",
-              "items": [
-                "Z690/Z790 boards target higher sustained power and overclocking",
-                "Stronger VRM stages and larger heatsinks",
-                "More I/O and expansion options"
-              ]
-            },
-            {
-              "title": "CPU Range",
-              "items": [
-                "Intel 12th, 13th, and 14th Gen desktop processors",
-                "Some boards need BIOS updates when moving between generations"
-              ]
-            }
-          ],
-          "sources": [
             {
               "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
               "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
             }
           ]
         },
         {
-          "id": "lga1851",
-          "label": "LGA 1851",
-          "subtitle": "Core Ultra Series 2 motherboard ecosystem",
+          "id": "b460",
+          "label": "B460",
+          "subtitle": "Mainstream LGA1200 chipset",
           "sections": [
             {
-              "title": "Typical LGA1851 Chipsets",
+              "title": "Socket",
               "items": [
-                "Intel 800 series desktop chipset family",
-                "Common enthusiast references: Z890 / B860 / H810 tiers"
+                "LGA1200"
               ]
             },
             {
-              "title": "CPU Range",
+              "title": "CPU Support",
               "items": [
-                "Intel Core Ultra desktop processors (Series 2)",
-                "Not backward compatible with LGA1700 motherboards"
+                "Intel 10th and 11th Gen desktop CPUs"
               ]
             }
           ],
           "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "h470",
+          "label": "H470",
+          "subtitle": "Mainstream LGA1200 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1200"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel 10th and 11th Gen desktop CPUs"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "z490",
+          "label": "Z490",
+          "subtitle": "Performance LGA1200 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1200"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel 10th and 11th Gen desktop CPUs"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "h510",
+          "label": "H510",
+          "subtitle": "Entry LGA1200 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1200"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel 10th and 11th Gen desktop CPUs"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "b560",
+          "label": "B560",
+          "subtitle": "Mainstream LGA1200 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1200"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel 10th and 11th Gen desktop CPUs"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "h570",
+          "label": "H570",
+          "subtitle": "Mainstream LGA1200 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1200"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel 10th and 11th Gen desktop CPUs"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "z590",
+          "label": "Z590",
+          "subtitle": "Performance LGA1200 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1200"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel 10th and 11th Gen desktop CPUs"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "h610",
+          "label": "H610",
+          "subtitle": "Entry LGA1700 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1700"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel 12th, 13th, and 14th Gen desktop CPUs"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "b660",
+          "label": "B660",
+          "subtitle": "Mainstream LGA1700 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1700"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel 12th, 13th, and 14th Gen desktop CPUs"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "h670",
+          "label": "H670",
+          "subtitle": "Mainstream LGA1700 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1700"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel 12th, 13th, and 14th Gen desktop CPUs"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "z690",
+          "label": "Z690",
+          "subtitle": "Performance LGA1700 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1700"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel 12th, 13th, and 14th Gen desktop CPUs"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "b760",
+          "label": "B760",
+          "subtitle": "Mainstream LGA1700 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1700"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel 12th, 13th, and 14th Gen desktop CPUs"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "h770",
+          "label": "H770",
+          "subtitle": "Mainstream LGA1700 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1700"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel 12th, 13th, and 14th Gen desktop CPUs"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "z790",
+          "label": "Z790",
+          "subtitle": "Performance LGA1700 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1700"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel 12th, 13th, and 14th Gen desktop CPUs"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "h810",
+          "label": "H810",
+          "subtitle": "Entry LGA1851 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1851"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel Core Ultra desktop (Series 2)"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "b860",
+          "label": "B860",
+          "subtitle": "Mainstream LGA1851 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1851"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel Core Ultra desktop (Series 2)"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
+            {
+              "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
+            }
+          ]
+        },
+        {
+          "id": "z890",
+          "label": "Z890",
+          "subtitle": "Performance LGA1851 chipset",
+          "sections": [
+            {
+              "title": "Socket",
+              "items": [
+                "LGA1851"
+              ]
+            },
+            {
+              "title": "CPU Support",
+              "items": [
+                "Intel Core Ultra desktop (Series 2)"
+              ]
+            }
+          ],
+          "sources": [
+            {
+              "label": "Intel 10th/11th Gen Compatibility (LGA1200)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000056574/processors.html"
+            },
+            {
+              "label": "Intel 12th/13th/14th Compatibility (LGA1700)",
+              "url": "https://www.intel.com/content/www/us/en/support/articles/000092149/processors.html"
+            },
             {
               "label": "Intel Core Ultra Series 2 Compatibility (LGA1851)",
               "url": "https://www.intel.com/content/www/us/en/support/articles/000099798/processors.html"
@@ -430,13 +1300,14 @@ window.catalogData = {
           "subtitle": "Blackwell generation",
           "sections": [
             {
-              "title": "Current Desktop Stack",
+              "title": "Desktop Models",
               "items": [
                 "RTX 5090",
                 "RTX 5080",
                 "RTX 5070 Ti",
                 "RTX 5070",
-                "RTX 5060 Ti",
+                "RTX 5060 Ti 16GB",
+                "RTX 5060 Ti 8GB",
                 "RTX 5060",
                 "RTX 5050"
               ]
@@ -455,12 +1326,18 @@ window.catalogData = {
           "subtitle": "Ada Lovelace generation",
           "sections": [
             {
-              "title": "Current Desktop Stack",
+              "title": "Desktop Models",
               "items": [
-                "RTX 4090",
-                "RTX 4080 SUPER / RTX 4080",
-                "RTX 4070 Ti SUPER / 4070 Ti / 4070 SUPER / 4070",
-                "RTX 4060 Ti / RTX 4060"
+                "RTX 4090 24GB",
+                "RTX 4080 SUPER 16GB",
+                "RTX 4080 16GB",
+                "RTX 4070 Ti SUPER 16GB",
+                "RTX 4070 Ti 12GB",
+                "RTX 4070 SUPER 12GB",
+                "RTX 4070 12GB",
+                "RTX 4060 Ti 16GB",
+                "RTX 4060 Ti 8GB",
+                "RTX 4060 8GB"
               ]
             }
           ],
@@ -477,13 +1354,21 @@ window.catalogData = {
           "subtitle": "Ampere generation",
           "sections": [
             {
-              "title": "Desktop Models (major lineup)",
+              "title": "Desktop Models",
               "items": [
-                "RTX 3090 Ti / RTX 3090",
-                "RTX 3080 Ti / RTX 3080",
-                "RTX 3070 Ti / RTX 3070",
-                "RTX 3060 Ti / RTX 3060",
-                "RTX 3050"
+                "RTX 3090 Ti 24GB",
+                "RTX 3090 24GB",
+                "RTX 3080 Ti 12GB",
+                "RTX 3080 12GB",
+                "RTX 3080 10GB",
+                "RTX 3070 Ti 8GB",
+                "RTX 3070 8GB",
+                "RTX 3060 Ti GDDR6X 8GB",
+                "RTX 3060 Ti GDDR6 8GB",
+                "RTX 3060 12GB",
+                "RTX 3060 8GB",
+                "RTX 3050 8GB",
+                "RTX 3050 6GB"
               ]
             }
           ],
@@ -502,25 +1387,36 @@ window.catalogData = {
             {
               "title": "GTX 10 Series (Pascal)",
               "items": [
-                "GTX 1050 / 1050 Ti",
-                "GTX 1060",
-                "GTX 1070 / 1070 Ti",
-                "GTX 1080 / 1080 Ti"
+                "GTX 1050 2GB",
+                "GTX 1050 Ti 4GB",
+                "GTX 1060 3GB",
+                "GTX 1060 6GB",
+                "GTX 1070 8GB",
+                "GTX 1070 Ti 8GB",
+                "GTX 1080 8GB",
+                "GTX 1080 Ti 11GB"
               ]
             },
             {
-              "title": "GTX 16 Series (Turing GTX)",
+              "title": "GTX 16 Series",
               "items": [
-                "GTX 1650 / 1650 SUPER",
-                "GTX 1660 / 1660 SUPER / 1660 Ti"
+                "GTX 1650 4GB",
+                "GTX 1650 SUPER 4GB",
+                "GTX 1660 6GB",
+                "GTX 1660 SUPER 6GB",
+                "GTX 1660 Ti 6GB"
               ]
             },
             {
-              "title": "Early RTX Generation (legacy bucket)",
+              "title": "RTX 20 Series",
               "items": [
-                "RTX 2060 / 2060 SUPER",
-                "RTX 2070 / 2070 SUPER",
-                "RTX 2080 / 2080 SUPER / 2080 Ti"
+                "RTX 2060 6GB",
+                "RTX 2060 SUPER 8GB",
+                "RTX 2070 8GB",
+                "RTX 2070 SUPER 8GB",
+                "RTX 2080 8GB",
+                "RTX 2080 SUPER 8GB",
+                "RTX 2080 Ti 11GB"
               ]
             }
           ],
@@ -571,7 +1467,8 @@ window.catalogData = {
             {
               "title": "Desktop Models",
               "items": [
-                "Arc A770 (16GB / 8GB)",
+                "Arc A770 16GB",
+                "Arc A770 8GB",
                 "Arc A750",
                 "Arc A580",
                 "Arc A380",
@@ -596,11 +1493,11 @@ window.catalogData = {
           "subtitle": "RDNA 4 generation",
           "sections": [
             {
-              "title": "Known Desktop Models",
+              "title": "Desktop Models",
               "items": [
-                "Radeon RX 9070 XT",
-                "Radeon RX 9070",
-                "Radeon RX 9060 XT (16GB)"
+                "RX 9070 XT",
+                "RX 9070",
+                "RX 9060 XT 16GB"
               ]
             }
           ],
@@ -619,12 +1516,12 @@ window.catalogData = {
             {
               "title": "Desktop Models",
               "items": [
-                "RX 7900 XTX",
-                "RX 7900 XT",
-                "RX 7800 XT",
-                "RX 7700 XT",
-                "RX 7600 XT",
-                "RX 7600"
+                "RX 7900 XTX 24GB",
+                "RX 7900 XT 20GB",
+                "RX 7800 XT 16GB",
+                "RX 7700 XT 12GB",
+                "RX 7600 XT 16GB",
+                "RX 7600 8GB"
               ]
             }
           ],
@@ -641,13 +1538,19 @@ window.catalogData = {
           "subtitle": "RDNA 2 generation",
           "sections": [
             {
-              "title": "Desktop Models (major lineup)",
+              "title": "Desktop Models",
               "items": [
-                "RX 6950 XT / 6900 XT",
-                "RX 6800 XT / 6800",
-                "RX 6750 XT / 6700 XT",
-                "RX 6650 XT / 6600 XT / 6600",
-                "RX 6500 XT / 6400"
+                "RX 6950 XT 16GB",
+                "RX 6900 XT 16GB",
+                "RX 6800 XT 16GB",
+                "RX 6800 16GB",
+                "RX 6750 XT 12GB",
+                "RX 6700 XT 12GB",
+                "RX 6650 XT 8GB",
+                "RX 6600 XT 8GB",
+                "RX 6600 8GB",
+                "RX 6500 XT 4GB",
+                "RX 6400 4GB"
               ]
             }
           ],
@@ -664,27 +1567,39 @@ window.catalogData = {
           "subtitle": "RX 400 series and newer legacy stack",
           "sections": [
             {
-              "title": "Radeon RX 400 Series (Polaris)",
+              "title": "RX 400 / 500 Series",
               "items": [
-                "RX 460",
-                "RX 470",
-                "RX 480"
+                "RX 460 2GB",
+                "RX 460 4GB",
+                "RX 470 4GB",
+                "RX 470 8GB",
+                "RX 480 4GB",
+                "RX 480 8GB",
+                "RX 550 2GB",
+                "RX 560 4GB",
+                "RX 570 4GB",
+                "RX 570 8GB",
+                "RX 580 4GB",
+                "RX 580 8GB",
+                "RX 590 8GB"
               ]
             },
             {
-              "title": "Radeon RX 500 Series and Vega",
+              "title": "Vega and Radeon VII",
               "items": [
-                "RX 550 / 560 / 570 / 580 / 590",
-                "Radeon RX Vega 56 / Vega 64",
-                "Radeon VII (high-end legacy)"
+                "RX Vega 56 8GB",
+                "RX Vega 64 8GB",
+                "Radeon VII 16GB"
               ]
             },
             {
-              "title": "Radeon RX 5000 Series (RDNA 1)",
+              "title": "RX 5000 Series",
               "items": [
-                "RX 5500 XT",
-                "RX 5600 XT",
-                "RX 5700 / RX 5700 XT"
+                "RX 5500 XT 4GB",
+                "RX 5500 XT 8GB",
+                "RX 5600 XT 6GB",
+                "RX 5700 8GB",
+                "RX 5700 XT 8GB"
               ]
             }
           ],
@@ -703,3 +1618,4 @@ window.catalogData = {
     }
   }
 };
+
