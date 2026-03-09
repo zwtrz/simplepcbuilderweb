@@ -1,0 +1,38 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - heading "Built Combo" [level=1] [ref=e4]
+    - link "Back to Home" [ref=e5] [cursor=pointer]:
+      - /url: index.html
+  - article [ref=e7]:
+    - generic [ref=e8]:
+      - heading "Anchor Selection" [level=2] [ref=e9]
+      - paragraph [ref=e10]: GPU - RTX 5090
+    - generic [ref=e11]:
+      - heading "Selected Part Profile" [level=3] [ref=e12]
+      - list [ref=e13]:
+        - listitem [ref=e14]: "Architecture: Blackwell"
+        - listitem [ref=e15]: "Typical interface: PCIe Gen 5 x16"
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - heading "Recommended CPU Side" [level=3] [ref=e18]
+        - list [ref=e19]:
+          - listitem [ref=e20]: "PCIe Gen4/Gen5 GPU selected: prefer CPU + motherboard combo that can expose PCIe 4+ lanes."
+      - generic [ref=e21]:
+        - heading "Recommended Motherboard Side" [level=3] [ref=e22]
+        - list [ref=e23]:
+          - listitem [ref=e24]: "Chipset targets: B650E/X670E/X870E (AMD) or Z790/Z890 class (Intel)."
+      - generic [ref=e25]:
+        - heading "Recommended GPU Side" [level=3] [ref=e26]
+        - list [ref=e27]:
+          - listitem [ref=e28]: Selected GPU is the anchor component.
+      - generic [ref=e29]:
+        - heading "Important Notes" [level=3] [ref=e30]
+        - list [ref=e31]:
+          - listitem [ref=e32]: For this GPU, prefer CPU + motherboard that can expose PCIe Gen 4 or Gen 5 lanes.
+    - generic [ref=e33]:
+      - link "Pick CPU Instead" [ref=e34] [cursor=pointer]:
+        - /url: cpu.html
+      - link "Pick GPU Instead" [ref=e35] [cursor=pointer]:
+        - /url: gpu.html
+      - link "Pick Motherboard Instead" [ref=e36] [cursor=pointer]:
+        - /url: motherboard.html

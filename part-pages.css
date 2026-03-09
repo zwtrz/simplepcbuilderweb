@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   --bg: #0d1117;
   --bg-elev: #161b22;
   --text: #e6edf3;
@@ -232,6 +232,16 @@ h1 {
   margin: 0;
 }
 
+.part-item-text {
+  border: 1px solid rgba(82, 112, 137, 0.34);
+  border-radius: 8px;
+  background: rgba(15, 25, 34, 0.7);
+  padding: 0.38rem 0.48rem;
+  color: #b7c8d8;
+  font-size: 0.86rem;
+  line-height: 1.35;
+}
+
 .part-item-btn {
   width: 100%;
   padding: 0.42rem 0.48rem;
@@ -277,6 +287,19 @@ h1 {
   font-size: 0.9rem;
 }
 
+.selection-details {
+  margin: 0.42rem 0 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.28rem;
+  color: #b7d6ef;
+  font-size: 0.82rem;
+}
+
+.selection-details li {
+  margin: 0;
+}
+
 .source-list {
   margin-top: 0.72rem;
   border-top: 1px solid rgba(78, 110, 137, 0.28);
@@ -304,6 +327,101 @@ h1 {
 
 .source-list a:hover {
   text-decoration: underline;
+}
+
+.combo-panel {
+  margin-top: 1rem;
+  border-radius: 14px;
+  border: 1px solid rgba(90, 128, 160, 0.4);
+  background: linear-gradient(180deg, rgba(18, 31, 44, 0.9), rgba(13, 24, 35, 0.94));
+  box-shadow: 0 14px 36px rgba(3, 9, 15, 0.4);
+  padding: clamp(0.8rem, 2vw, 1rem);
+  animation: panelFade 220ms ease-out;
+}
+
+.combo-panel h2 {
+  margin: 0;
+  font-size: 1.06rem;
+  color: #d8efff;
+}
+
+.combo-selections {
+  margin-top: 0.45rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(140px, 1fr));
+  gap: 0.5rem;
+}
+
+.combo-selections p {
+  margin: 0;
+  padding: 0.45rem 0.52rem;
+  border: 1px solid rgba(83, 120, 152, 0.32);
+  border-radius: 9px;
+  background: rgba(20, 33, 47, 0.74);
+  color: #bfd8ed;
+  font-size: 0.86rem;
+}
+
+.combo-columns {
+  margin-top: 0.64rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.62rem;
+}
+
+.combo-columns section,
+.combo-snapshot {
+  border: 1px solid rgba(83, 120, 152, 0.32);
+  border-radius: 10px;
+  background: rgba(17, 29, 41, 0.72);
+  padding: 0.58rem;
+}
+
+.combo-columns h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #cae8ff;
+}
+
+.combo-columns p {
+  margin: 0.42rem 0 0;
+  color: #aac6de;
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
+.combo-columns ul,
+.combo-snapshot ul {
+  margin: 0.42rem 0 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.28rem;
+}
+
+.combo-columns li,
+.combo-snapshot li {
+  color: #c0d9ed;
+  font-size: 0.83rem;
+  line-height: 1.35;
+}
+
+.combo-snapshots {
+  margin-top: 0.62rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 0.58rem;
+}
+
+.combo-snapshot h4 {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #c6e6ff;
+}
+
+.combo-snapshot p {
+  margin: 0.4rem 0 0;
+  color: #a8c4db;
+  font-size: 0.82rem;
 }
 
 @keyframes pageEnter {
@@ -344,7 +462,10 @@ h1 {
   }
 
   .option-grid,
-  .parts-groups {
+  .parts-groups,
+  .combo-selections,
+  .combo-columns,
+  .combo-snapshots {
     grid-template-columns: 1fr;
   }
 }
@@ -358,4 +479,92 @@ h1 {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+.combo-result-wrap {
+  animation: panelFade 220ms ease-out;
+}
+
+.combo-result-shell {
+  display: grid;
+  gap: 0.72rem;
+}
+
+.combo-result-head h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #d8efff;
+}
+
+.combo-result-head p {
+  margin: 0.3rem 0 0;
+  color: #9ec9e8;
+  font-size: 0.94rem;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 0.62rem;
+}
+
+.result-card {
+  border: 1px solid rgba(83, 120, 152, 0.32);
+  border-radius: 10px;
+  background: rgba(17, 29, 41, 0.72);
+  padding: 0.62rem;
+}
+
+.result-card h3 {
+  margin: 0;
+  font-size: 0.92rem;
+  color: #cae8ff;
+}
+
+.result-card p {
+  margin: 0.4rem 0 0;
+  color: #aac6de;
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+
+.result-card ul {
+  margin: 0.42rem 0 0;
+  padding-left: 1rem;
+  display: grid;
+  gap: 0.28rem;
+}
+
+.result-card li {
+  color: #c0d9ed;
+  font-size: 0.83rem;
+  line-height: 1.35;
+}
+
+.result-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.inline-link {
+  color: #a8d8ff;
+  text-decoration: none;
+  border: 1px solid rgba(95, 152, 202, 0.5);
+  border-radius: 9px;
+  padding: 0.42rem 0.6rem;
+  font-size: 0.85rem;
+  transition: transform 150ms ease, filter 150ms ease;
+}
+
+.inline-link:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.08);
+}
+@media (max-width: 640px) {
+  .result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+body.nav-lock .nav-link {
+  pointer-events: none;
 }

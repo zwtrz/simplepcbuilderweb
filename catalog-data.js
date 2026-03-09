@@ -1,4 +1,4 @@
-﻿window.catalogData = {
+window.catalogData = {
   "cpu": {
     "amd": {
       "options": [
@@ -35,9 +35,8 @@
             {
               "title": "Ryzen 4000 Series (Zen 2 / OEM + APU)",
               "items": [
-                "Ryzen 3: 4100, 4300G",
-                "Ryzen 5: 4500, 4600G",
-                "Ryzen 7: 4700G"
+                "Ryzen 3: 4100",
+                "Ryzen 5: 4500, 4600G"
               ]
             },
             {
@@ -1389,7 +1388,6 @@
               "items": [
                 "GTX 1050 2GB",
                 "GTX 1050 Ti 4GB",
-                "GTX 1060 3GB",
                 "GTX 1060 6GB",
                 "GTX 1070 8GB",
                 "GTX 1070 Ti 8GB",

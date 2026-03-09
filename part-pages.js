@@ -1,6 +1,7 @@
-﻿const blocks = document.querySelectorAll(".selector-block");
+const blocks = document.querySelectorAll(".selector-block");
 const pageType = document.body.dataset.pageType;
 const pageCatalog = window.catalogData?.[pageType] || {};
+const COMBO_SEED_KEY = "spcb-combo-seed";
 
 const escapeHtml = (value) =>
   String(value)
@@ -10,15 +11,45 @@ const escapeHtml = (value) =>
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#39;");
 
-const navigateWithFade = (targetUrl) => {
-  if (!targetUrl || document.body.classList.contains("page-leave")) {
-    return;
+const startComboFlow = (payload) => {
+  const seed = {
+    type: pageType,
+    ...payload,
+    updatedAt: Date.now()
+  };
+
+  window.localStorage.setItem(COMBO_SEED_KEY, JSON.stringify(seed));
+  window.location.href = "combo.html";
+};
+
+const expandRawItem = (rawItem) => {
+  const item = String(rawItem || "").trim();
+  if (!item) {
+    return [];
   }
 
-  document.body.classList.add("page-leave");
-  window.setTimeout(() => {
-    window.location.href = targetUrl;
-  }, 180);
+  if (item.includes(":")) {
+    const [prefixPart, ...restParts] = item.split(":");
+    const prefix = prefixPart.trim();
+    const rest = restParts.join(":").trim();
+
+    const splitTokens = rest
+      .split(",")
+      .flatMap((token) => token.split("/"))
+      .map((token) => token.replace(/\bclass\b/gi, "").trim())
+      .filter(Boolean);
+
+    return splitTokens.map((token) => `${prefix} ${token}`.replace(/\s+/g, " ").trim());
+  }
+
+  if (item.includes(" / ") && /\d/.test(item)) {
+    return item
+      .split("/")
+      .map((token) => token.trim())
+      .filter(Boolean);
+  }
+
+  return [item];
 };
 
 const createOptionMarkup = (option) => {
@@ -30,31 +61,42 @@ const createOptionMarkup = (option) => {
   `;
 };
 
-const createPartsMarkup = (option) => {
-  const sectionsMarkup = option.sections
-    .map((section, sectionIndex) => {
-      const itemsMarkup = section.items
-        .map((item, itemIndex) => {
-          const itemLabel = escapeHtml(item);
-          const itemId = `${option.id}-${sectionIndex}-${itemIndex}`;
+const createSectionItemsMarkup = (section, option, sectionIndex, interactiveItems) => {
+  const expandedItems = (section.items || []).flatMap(expandRawItem);
 
-          return `
-            <li>
-              <button class="part-item-btn" type="button" data-item-id="${escapeHtml(itemId)}" data-item-label="${itemLabel}" aria-pressed="false">
-                ${itemLabel}
-              </button>
-            </li>
-          `;
-        })
-        .join("");
+  if (!interactiveItems) {
+    const textItems = expandedItems.map((item) => `<li class="part-item-text">${escapeHtml(item)}</li>`).join("");
+    return `<ul>${textItems}</ul>`;
+  }
+
+  const itemButtons = expandedItems
+    .map((item, itemIndex) => {
+      const itemLabel = escapeHtml(item);
+      const itemId = `${option.id}-${sectionIndex}-${itemIndex}`;
 
       return `
-        <section class="parts-group">
-          <h4>${escapeHtml(section.title)}</h4>
-          <ul>${itemsMarkup}</ul>
-        </section>
+        <li>
+          <button class="part-item-btn" type="button" data-item-id="${escapeHtml(itemId)}" aria-pressed="false">
+            ${itemLabel}
+          </button>
+        </li>
       `;
     })
+    .join("");
+
+  return `<ul>${itemButtons}</ul>`;
+};
+
+const createPartsMarkup = (option, interactiveItems) => {
+  const sectionsMarkup = option.sections
+    .map(
+      (section, sectionIndex) => `
+        <section class="parts-group">
+          <h4>${escapeHtml(section.title)}</h4>
+          ${createSectionItemsMarkup(section, option, sectionIndex, interactiveItems)}
+        </section>
+      `
+    )
     .join("");
 
   const sourcesMarkup = option.sources?.length
@@ -80,10 +122,6 @@ const createPartsMarkup = (option) => {
         <p>${escapeHtml(option.subtitle)}</p>
       </header>
       <div class="parts-groups">${sectionsMarkup}</div>
-      <section class="selection-box" aria-live="polite">
-        <p>Placeholder Selection</p>
-        <div class="selection-value">None selected</div>
-      </section>
       ${sourcesMarkup}
     </article>
   `;
@@ -118,12 +156,12 @@ blocks.forEach((block) => {
     const optionGrid = activePanel.querySelector(".option-grid");
     const partsOutput = activePanel.querySelector(".parts-output");
     const options = vendorData.options || [];
+    const interactiveItems = pageType !== "motherboard";
 
     optionGrid.innerHTML = options.map(createOptionMarkup).join("");
-
     const optionButtons = optionGrid.querySelectorAll(".option-btn");
 
-    const activateOption = (optionId) => {
+    const activateOption = (optionId, openCombo) => {
       optionButtons.forEach((button) => {
         const isActive = button.dataset.optionId === optionId;
         button.classList.toggle("active", isActive);
@@ -135,33 +173,31 @@ blocks.forEach((block) => {
         return;
       }
 
-      partsOutput.innerHTML = createPartsMarkup(selectedOption);
+      if (!interactiveItems && openCombo) {
+        startComboFlow({
+          label: selectedOption.label,
+          vendor,
+          optionId,
+          optionLabel: selectedOption.label
+        });
+        return;
+      }
+
+      partsOutput.innerHTML = createPartsMarkup(selectedOption, interactiveItems);
+
+      if (!interactiveItems) {
+        return;
+      }
 
       const partItemButtons = partsOutput.querySelectorAll(".part-item-btn");
-      const selectionValue = partsOutput.querySelector(".selection-value");
-
       partItemButtons.forEach((itemButton) => {
         itemButton.addEventListener("click", () => {
-          const wasActive = itemButton.classList.contains("active");
-
-          partItemButtons.forEach((button) => {
-            button.classList.remove("active");
-            button.setAttribute("aria-pressed", "false");
+          startComboFlow({
+            label: itemButton.textContent.trim(),
+            vendor,
+            optionId,
+            optionLabel: selectedOption.label
           });
-
-          if (wasActive) {
-            if (selectionValue) {
-              selectionValue.textContent = "None selected";
-            }
-            return;
-          }
-
-          itemButton.classList.add("active");
-          itemButton.setAttribute("aria-pressed", "true");
-
-          if (selectionValue) {
-            selectionValue.textContent = itemButton.textContent.trim();
-          }
         });
       });
 
@@ -172,12 +208,15 @@ blocks.forEach((block) => {
     };
 
     optionButtons.forEach((button) => {
-      button.addEventListener("click", () => activateOption(button.dataset.optionId));
+      button.addEventListener("click", () => {
+        const openCombo = pageType === "motherboard";
+        activateOption(button.dataset.optionId, openCombo);
+      });
     });
 
     const firstOptionId = options[0]?.id;
     if (firstOptionId) {
-      activateOption(firstOptionId);
+      activateOption(firstOptionId, false);
     } else {
       partsOutput.innerHTML = "";
     }
@@ -197,11 +236,3 @@ blocks.forEach((block) => {
     renderVendorPanel(firstVendor);
   }
 });
-
-document.querySelectorAll(".back-link").forEach((link) => {
-  link.addEventListener("click", (event) => {
-    event.preventDefault();
-    navigateWithFade(link.getAttribute("href"));
-  });
-});
-
