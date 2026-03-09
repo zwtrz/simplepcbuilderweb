@@ -1,10 +1,12 @@
 :root {
-  --bg: #101722;
-  --card: #1a2534;
-  --line: #2e425a;
-  --text: #e8f0f8;
-  --muted: #abc0d4;
-  --accent: #8dcfff;
+  --bg: #0f1115;
+  --surface: #171a21;
+  --surface-2: #1d212a;
+  --line: #2a2f3a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #3b82f6;
+  --accent-2: #60a5fa;
 }
 
 * {
@@ -46,9 +48,9 @@ h1 {
 
 .back-link,
 .inline-link {
-  color: var(--accent);
+  color: var(--accent-2);
   text-decoration: none;
-  border: 1px solid rgba(141, 207, 255, 0.45);
+  border: 1px solid color-mix(in srgb, var(--accent-2) 45%, transparent);
   border-radius: 8px;
   padding: 0.42rem 0.62rem;
   font-size: 0.9rem;
@@ -60,9 +62,9 @@ h1 {
 }
 
 .combo-result-wrap {
-  border: 1px solid rgba(72, 102, 132, 0.5);
+  border: 1px solid var(--line);
   border-radius: 12px;
-  background: rgba(22, 33, 47, 0.9);
+  background: var(--surface);
   padding: 0.95rem;
 }
 
@@ -90,7 +92,7 @@ h1 {
 .result-card {
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: var(--card);
+  background: var(--surface-2);
   padding: 0.62rem;
 }
 
@@ -138,9 +140,9 @@ h1 {
 }
 
 .gpu-pick-card {
-  border: 1px solid rgba(72, 102, 132, 0.5);
+  border: 1px solid var(--line);
   border-radius: 8px;
-  background: rgba(14, 23, 34, 0.78);
+  background: var(--surface);
   padding: 0.5rem;
 }
 
@@ -161,7 +163,7 @@ h1 {
 }
 
 .reference-group + .reference-group {
-  border-top: 1px solid rgba(72, 102, 132, 0.45);
+  border-top: 1px solid var(--line);
   padding-top: 0.45rem;
 }
 

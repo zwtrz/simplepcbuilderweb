@@ -7,114 +7,33 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <main class="page" id="page">
-    <section class="hero" id="hero">
-      <h1>Simple PC Parts Configurator</h1>
-      <button id="startBtn" class="start-btn" type="button">Start</button>
-    </section>
+  <main class="page">
+    <section class="landing">
+      <article class="intro">
+        <h1>Simple PC Parts Configurator</h1>
+        <p>
+          Pick one part first and the website builds a focused recommendation around it. It prioritizes compatibility, PCIe behavior, and balanced pairings for CPU, GPU, and motherboard choices.
+        </p>
+      </article>
 
-    <section class="selector" id="selector" aria-hidden="true">
-      <h2>Which part do you want to select first?</h2>
-
-      <div class="part-grid">
-        <article class="part-card" style="--delay: 0s;">
-          <button class="part-btn" type="button" data-target="cpu.html">CPU</button>
-          <svg class="part-art" viewBox="0 0 140 110" aria-hidden="true">
-            <rect x="36" y="20" width="68" height="68" rx="8" />
-            <rect x="50" y="34" width="40" height="40" rx="5" />
-            <line x1="20" y1="33" x2="36" y2="33" />
-            <line x1="20" y1="50" x2="36" y2="50" />
-            <line x1="20" y1="67" x2="36" y2="67" />
-            <line x1="104" y1="33" x2="120" y2="33" />
-            <line x1="104" y1="50" x2="120" y2="50" />
-            <line x1="104" y1="67" x2="120" y2="67" />
-            <line x1="53" y1="4" x2="53" y2="20" />
-            <line x1="70" y1="4" x2="70" y2="20" />
-            <line x1="87" y1="4" x2="87" y2="20" />
-            <line x1="53" y1="88" x2="53" y2="104" />
-            <line x1="70" y1="88" x2="70" y2="104" />
-            <line x1="87" y1="88" x2="87" y2="104" />
-          </svg>
-        </article>
-        <article class="part-card gpu" style="--delay: 0.12s;">
-          <button class="part-btn" type="button" data-target="gpu.html">GPU</button>
-          <svg class="part-art" viewBox="0 0 180 120" aria-hidden="true">
-            <rect x="12" y="30" width="12" height="56" rx="2" />
-            <rect x="12" y="38" width="12" height="8" rx="1.5" />
-            <rect x="12" y="50" width="12" height="8" rx="1.5" />
-            <rect x="12" y="62" width="12" height="8" rx="1.5" />
-            <line x1="24" y1="86" x2="24" y2="92" />
-
-            <path d="M24 28 H150 Q160 28 164 36 V82 Q164 90 156 90 H24 Z" />
-            <path d="M34 38 H124 Q132 38 136 46 V74 Q136 82 128 82 H34 Z" />
-            <rect x="140" y="40" width="18" height="10" rx="2" />
-            <rect x="140" y="54" width="18" height="10" rx="2" />
-            <circle cx="152" cy="72" r="2.3" />
-            <circle cx="34" cy="34" r="2.3" />
-            <circle cx="156" cy="34" r="2.3" />
-
-            <rect x="62" y="90" width="62" height="7" rx="2" />
-            <line x1="126" y1="90" x2="126" y2="98" />
-            <line x1="132" y1="90" x2="132" y2="98" />
-
-            <g class="fan fan-left">
-              <circle cx="64" cy="60" r="14" />
-              <path d="M64 46 C70 48 73 53 71 59 C66 60 61 58 58 54 C59 50 61 47 64 46 Z" />
-              <path d="M78 60 C76 66 71 70 65 69 C63 64 65 58 69 55 C73 55 76 57 78 60 Z" />
-              <path d="M64 74 C58 72 55 67 57 61 C62 60 67 62 70 66 C69 70 67 73 64 74 Z" />
-              <path d="M50 60 C52 54 57 50 63 51 C65 56 63 62 59 65 C55 65 52 63 50 60 Z" />
-              <circle cx="64" cy="60" r="3.5" />
-            </g>
-
-            <g class="fan fan-right">
-              <circle cx="104" cy="60" r="14" />
-              <path d="M104 46 C110 48 113 53 111 59 C106 60 101 58 98 54 C99 50 101 47 104 46 Z" />
-              <path d="M118 60 C116 66 111 70 105 69 C103 64 105 58 109 55 C113 55 116 57 118 60 Z" />
-              <path d="M104 74 C98 72 95 67 97 61 C102 60 107 62 110 66 C109 70 107 73 104 74 Z" />
-              <path d="M90 60 C92 54 97 50 103 51 C105 56 103 62 99 65 C95 65 92 63 90 60 Z" />
-              <circle cx="104" cy="60" r="3.5" />
-            </g>
-          </svg>
-        </article>
-        <article class="part-card motherboard" style="--delay: 0.24s;">
-          <button class="part-btn" type="button" data-target="motherboard.html">Motherboard</button>
-          <svg class="part-art" viewBox="0 0 180 130" aria-hidden="true">
-            <rect x="20" y="16" width="140" height="98" rx="8" />
-
-            <rect x="22" y="28" width="12" height="64" rx="2" />
-            <rect x="24" y="36" width="8" height="8" rx="1.3" />
-            <rect x="24" y="50" width="8" height="8" rx="1.3" />
-            <rect x="24" y="64" width="8" height="8" rx="1.3" />
-
-            <rect x="62" y="30" width="44" height="44" rx="4" />
-            <rect x="74" y="42" width="20" height="20" rx="2" />
-
-            <rect x="124" y="28" width="8" height="74" rx="1.8" class="mb-dimm" />
-            <rect x="136" y="28" width="8" height="74" rx="1.8" class="mb-dimm" />
-
-            <rect x="44" y="84" width="74" height="8" rx="2" class="mb-slot" />
-            <rect x="44" y="98" width="56" height="6" rx="1.8" />
-
-            <rect x="74" y="80" width="24" height="18" rx="3" class="mb-chip" />
-
-            <rect x="110" y="88" width="10" height="7" rx="1.4" />
-            <rect x="122" y="88" width="10" height="7" rx="1.4" />
-
-            <circle cx="30" cy="26" r="2" />
-            <circle cx="150" cy="26" r="2" />
-            <circle cx="30" cy="104" r="2" />
-            <circle cx="150" cy="104" r="2" />
-          </svg>
-        </article>
-      </div>
+      <nav class="option-stack" aria-label="Part selector">
+        <button class="option-tile" type="button" data-target="cpu.html" style="--delay: 0.08s;">
+          <span class="option-name">CPU</span>
+          <span class="option-hint">Start from processor generation and platform</span>
+        </button>
+        <button class="option-tile" type="button" data-target="gpu.html" style="--delay: 0.18s;">
+          <span class="option-name">GPU</span>
+          <span class="option-hint">Start from graphics architecture and lane needs</span>
+        </button>
+        <button class="option-tile" type="button" data-target="motherboard.html" style="--delay: 0.28s;">
+          <span class="option-name">Motherboard</span>
+          <span class="option-hint">Start from chipset and socket compatibility</span>
+        </button>
+      </nav>
     </section>
   </main>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
 
