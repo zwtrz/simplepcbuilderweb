@@ -94,9 +94,18 @@ h1 {
   padding: 0.62rem;
 }
 
+.result-card-wide {
+  grid-column: 1 / -1;
+}
+
 .result-card h3 {
   margin: 0;
   font-size: 0.94rem;
+}
+
+.result-card h4 {
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 .result-card p {
@@ -117,19 +126,68 @@ h1 {
   line-height: 1.35;
 }
 
+.result-card a {
+  color: var(--accent);
+}
+
+.gpu-pick-grid {
+  margin-top: 0.45rem;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(160px, 1fr));
+  gap: 0.5rem;
+}
+
+.gpu-pick-card {
+  border: 1px solid rgba(72, 102, 132, 0.5);
+  border-radius: 8px;
+  background: rgba(14, 23, 34, 0.78);
+  padding: 0.5rem;
+}
+
+.gpu-pick-card p {
+  margin: 0.34rem 0 0;
+}
+
+.reference-dropdown {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.reference-dropdown summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 0.92rem;
+  user-select: none;
+}
+
+.reference-group + .reference-group {
+  border-top: 1px solid rgba(72, 102, 132, 0.45);
+  padding-top: 0.45rem;
+}
+
+.reference-group h4 {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.reference-group ul {
+  margin-top: 0.35rem;
+}
+
 .result-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 760px) {
+  .result-grid,
+  .gpu-pick-grid {
+    grid-template-columns: 1fr;
+  }
+
   .topbar {
     flex-direction: column;
     align-items: flex-start;
-  }
-
-  .result-grid {
-    grid-template-columns: 1fr;
   }
 }

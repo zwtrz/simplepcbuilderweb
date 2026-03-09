@@ -6,263 +6,115 @@
   };
 
   const chipsetMeta = {
-    A320: {
-      vendor: "amd",
-      socket: "AM4",
-      tier: "entry",
-      pcie: 3,
-      lanesNote: "Entry AM4 expansion. CPU PCIe lanes are the main performance path."
-    },
-    B350: {
-      vendor: "amd",
-      socket: "AM4",
-      tier: "mid",
-      pcie: 3,
-      lanesNote: "Mainstream AM4 expansion with moderate PCIe lane budget."
-    },
-    X370: {
-      vendor: "amd",
-      socket: "AM4",
-      tier: "high",
-      pcie: 3,
-      lanesNote: "High-end first-gen AM4 routing with larger I/O budget."
-    },
-    B450: {
-      vendor: "amd",
-      socket: "AM4",
-      tier: "mid",
-      pcie: 3,
-      lanesNote: "Balanced AM4 chipset for PCIe 3 era Ryzen builds."
-    },
-    X470: {
-      vendor: "amd",
-      socket: "AM4",
-      tier: "high",
-      pcie: 3,
-      lanesNote: "High-end AM4 chipset optimized for strong PCIe 3 configurations."
-    },
-    A520: {
-      vendor: "amd",
-      socket: "AM4",
-      tier: "entry",
-      pcie: 3,
-      lanesNote: "Modern entry AM4 chipset with basic expansion capability."
-    },
-    B550: {
-      vendor: "amd",
-      socket: "AM4",
-      tier: "mid",
-      pcie: 4,
-      lanesNote: "Mainstream AM4 chipset that unlocks PCIe 4 paths with compatible CPUs."
-    },
-    X570: {
-      vendor: "amd",
-      socket: "AM4",
-      tier: "high",
-      pcie: 4,
-      lanesNote: "High-end AM4 chipset with broad PCIe 4 expansion."
-    },
-    A620: {
-      vendor: "amd",
-      socket: "AM5",
-      tier: "entry",
-      pcie: 4,
-      lanesNote: "Entry AM5 chipset with limited expansion compared to B/X options."
-    },
-    B650: {
-      vendor: "amd",
-      socket: "AM5",
-      tier: "mid",
-      pcie: 5,
-      lanesNote: "Mainstream AM5 chipset for balanced PCIe 5 ready builds."
-    },
-    B650E: {
-      vendor: "amd",
-      socket: "AM5",
-      tier: "mid",
-      pcie: 5,
-      lanesNote: "Enhanced B650 routing with stronger guaranteed high-speed PCIe links."
-    },
-    X670: {
-      vendor: "amd",
-      socket: "AM5",
-      tier: "high",
-      pcie: 5,
-      lanesNote: "High-end AM5 chipset with wider lane budget and I/O scale."
-    },
-    X670E: {
-      vendor: "amd",
-      socket: "AM5",
-      tier: "high",
-      pcie: 5,
-      lanesNote: "Flagship AM5 routing with strongest PCIe lane flexibility."
-    },
-    B850: {
-      vendor: "amd",
-      socket: "AM5",
-      tier: "mid",
-      pcie: 5,
-      lanesNote: "Newer mainstream AM5 chipset class with PCIe 5 focus."
-    },
-    X870: {
-      vendor: "amd",
-      socket: "AM5",
-      tier: "high",
-      pcie: 5,
-      lanesNote: "Newer high-end AM5 chipset targeting high lane and I/O needs."
-    },
-    X870E: {
-      vendor: "amd",
-      socket: "AM5",
-      tier: "high",
-      pcie: 5,
-      lanesNote: "Top AM5 chipset class for max PCIe 5 expansion planning."
-    },
-    H410: {
-      vendor: "intel",
-      socket: "LGA1200",
-      tier: "entry",
-      pcie: 3,
-      lanesNote: "Entry Intel 400-series chipset with basic expansion lanes."
-    },
-    B460: {
-      vendor: "intel",
-      socket: "LGA1200",
-      tier: "mid",
-      pcie: 3,
-      lanesNote: "Mainstream Intel 400-series lane budget for general-purpose builds."
-    },
-    H470: {
-      vendor: "intel",
-      socket: "LGA1200",
-      tier: "mid",
-      pcie: 3,
-      lanesNote: "Upper mainstream Intel 400-series lane and I/O profile."
-    },
-    Z490: {
-      vendor: "intel",
-      socket: "LGA1200",
-      tier: "high",
-      pcie: 3,
-      lanesNote: "High-end Intel 400-series platform with stronger tuning headroom."
-    },
-    H510: {
-      vendor: "intel",
-      socket: "LGA1200",
-      tier: "entry",
-      pcie: 4,
-      lanesNote: "Entry Intel 500-series class; basic but newer PCIe-era platform."
-    },
-    B560: {
-      vendor: "intel",
-      socket: "LGA1200",
-      tier: "mid",
-      pcie: 4,
-      lanesNote: "Balanced Intel 500-series lane profile with wider compatibility."
-    },
-    H570: {
-      vendor: "intel",
-      socket: "LGA1200",
-      tier: "mid",
-      pcie: 4,
-      lanesNote: "Upper mainstream Intel 500-series chipset lane map."
-    },
-    Z590: {
-      vendor: "intel",
-      socket: "LGA1200",
-      tier: "high",
-      pcie: 4,
-      lanesNote: "High-end LGA1200 chipset with expanded high-speed routing."
-    },
-    H610: {
-      vendor: "intel",
-      socket: "LGA1700",
-      tier: "entry",
-      pcie: 4,
-      lanesNote: "Entry LGA1700 chipset, often minimal lane and VRM provisioning."
-    },
-    B660: {
-      vendor: "intel",
-      socket: "LGA1700",
-      tier: "mid",
-      pcie: 5,
-      lanesNote: "Mainstream LGA1700 chipset with stronger PCIe lane flexibility."
-    },
-    H670: {
-      vendor: "intel",
-      socket: "LGA1700",
-      tier: "mid",
-      pcie: 5,
-      lanesNote: "Upper mainstream LGA1700 chipset with broader expansion."
-    },
-    Z690: {
-      vendor: "intel",
-      socket: "LGA1700",
-      tier: "high",
-      pcie: 5,
-      lanesNote: "High-end LGA1700 platform for high I/O and tuning workloads."
-    },
-    B760: {
-      vendor: "intel",
-      socket: "LGA1700",
-      tier: "mid",
-      pcie: 5,
-      lanesNote: "Mainstream updated LGA1700 chipset for PCIe 5 era builds."
-    },
-    H770: {
-      vendor: "intel",
-      socket: "LGA1700",
-      tier: "mid",
-      pcie: 5,
-      lanesNote: "Upper mainstream LGA1700 lane budget and connectivity."
-    },
-    Z790: {
-      vendor: "intel",
-      socket: "LGA1700",
-      tier: "high",
-      pcie: 5,
-      lanesNote: "High-end LGA1700 class for demanding PCIe and platform loads."
-    },
-    H810: {
-      vendor: "intel",
-      socket: "LGA1851",
-      tier: "entry",
-      pcie: 5,
-      lanesNote: "Entry LGA1851 chipset with modern baseline PCIe capability."
-    },
-    B860: {
-      vendor: "intel",
-      socket: "LGA1851",
-      tier: "mid",
-      pcie: 5,
-      lanesNote: "Mainstream LGA1851 chipset class for current Intel desktop."
-    },
-    Z890: {
-      vendor: "intel",
-      socket: "LGA1851",
-      tier: "high",
-      pcie: 5,
-      lanesNote: "High-end LGA1851 chipset with top platform expansion targets."
-    }
+    A320: { vendor: "amd", socket: "AM4", tier: "entry", pcie: 3 },
+    B350: { vendor: "amd", socket: "AM4", tier: "mid", pcie: 3 },
+    X370: { vendor: "amd", socket: "AM4", tier: "high", pcie: 3 },
+    B450: { vendor: "amd", socket: "AM4", tier: "mid", pcie: 3 },
+    X470: { vendor: "amd", socket: "AM4", tier: "high", pcie: 3 },
+    A520: { vendor: "amd", socket: "AM4", tier: "entry", pcie: 3 },
+    B550: { vendor: "amd", socket: "AM4", tier: "mid", pcie: 4 },
+    X570: { vendor: "amd", socket: "AM4", tier: "high", pcie: 4 },
+    A620: { vendor: "amd", socket: "AM5", tier: "entry", pcie: 4 },
+    B650: { vendor: "amd", socket: "AM5", tier: "mid", pcie: 5 },
+    B650E: { vendor: "amd", socket: "AM5", tier: "mid", pcie: 5 },
+    X670: { vendor: "amd", socket: "AM5", tier: "high", pcie: 5 },
+    X670E: { vendor: "amd", socket: "AM5", tier: "high", pcie: 5 },
+    B850: { vendor: "amd", socket: "AM5", tier: "mid", pcie: 5 },
+    X870: { vendor: "amd", socket: "AM5", tier: "high", pcie: 5 },
+    X870E: { vendor: "amd", socket: "AM5", tier: "high", pcie: 5 },
+    H410: { vendor: "intel", socket: "LGA1200", tier: "entry", pcie: 3 },
+    B460: { vendor: "intel", socket: "LGA1200", tier: "mid", pcie: 3 },
+    H470: { vendor: "intel", socket: "LGA1200", tier: "mid", pcie: 3 },
+    Z490: { vendor: "intel", socket: "LGA1200", tier: "high", pcie: 3 },
+    H510: { vendor: "intel", socket: "LGA1200", tier: "entry", pcie: 4 },
+    B560: { vendor: "intel", socket: "LGA1200", tier: "mid", pcie: 4 },
+    H570: { vendor: "intel", socket: "LGA1200", tier: "mid", pcie: 4 },
+    Z590: { vendor: "intel", socket: "LGA1200", tier: "high", pcie: 4 },
+    H610: { vendor: "intel", socket: "LGA1700", tier: "entry", pcie: 4 },
+    B660: { vendor: "intel", socket: "LGA1700", tier: "mid", pcie: 5 },
+    H670: { vendor: "intel", socket: "LGA1700", tier: "mid", pcie: 5 },
+    Z690: { vendor: "intel", socket: "LGA1700", tier: "high", pcie: 5 },
+    B760: { vendor: "intel", socket: "LGA1700", tier: "mid", pcie: 5 },
+    H770: { vendor: "intel", socket: "LGA1700", tier: "mid", pcie: 5 },
+    Z790: { vendor: "intel", socket: "LGA1700", tier: "high", pcie: 5 },
+    H810: { vendor: "intel", socket: "LGA1851", tier: "entry", pcie: 5 },
+    B860: { vendor: "intel", socket: "LGA1851", tier: "mid", pcie: 5 },
+    Z890: { vendor: "intel", socket: "LGA1851", tier: "high", pcie: 5 }
   };
 
-  const amdMidAm5 = ["B650", "B650E", "B850", "X670", "X670E", "X870", "X870E"];
-  const amdHighAm5 = ["X670", "X670E", "X870", "X870E"];
-
-  const intelBOrZ = [
-    "B460",
-    "B560",
-    "B660",
-    "B760",
-    "B860",
-    "Z490",
-    "Z590",
-    "Z690",
-    "Z790",
-    "Z890"
+  const BENCHMARK_SOURCES = [
+    {
+      label: "PassMark CPU: Ryzen 3 1200 (single-thread and overall baseline)",
+      url: "https://www.cpubenchmark.net/cpu.php?cpu=AMD+Ryzen+3+1200&id=3029"
+    },
+    {
+      label: "PassMark CPU: Ryzen 5 5600 (modern mid-tier baseline)",
+      url: "https://www.cpubenchmark.net/cpu.php?cpu=AMD+Ryzen+5+5600&id=4811"
+    },
+    {
+      label: "PassMark CPU: Core i5-12400F (modern mid-tier baseline)",
+      url: "https://www.cpubenchmark.net/cpu.php?id=4681&cpu=Intel+Core+i5-12400F"
+    },
+    {
+      label: "TechSpot: GeForce GTX 1660 review and relative GPU positioning",
+      url: "https://www.techspot.com/review/1813-geforce-gtx-1660-mega-benchmark/"
+    },
+    {
+      label: "AMD Ryzen 5 8500G specs (Native PCIe lanes 14/10)",
+      url: "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-5-8500g.html"
+    },
+    {
+      label: "AMD Ryzen 5 8600G specs (Native PCIe lanes 20/16)",
+      url: "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-5-8600g.html"
+    },
+    {
+      label: "AMD Ryzen 7 8700G specs (Native PCIe lanes 20/16)",
+      url: "https://www.amd.com/en/products/processors/desktops/ryzen/8000-series/amd-ryzen-7-8700g.html"
+    },
+    {
+      label: "AMD Ryzen 5 4600G support specs (Native PCIe lanes 24/20)",
+      url: "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-4000-series/amd-ryzen-5-4600g.html"
+    },
+    {
+      label: "AMD Ryzen 3 2200G support specs (PCIe 3.0 x8 graphics link)",
+      url: "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-2000-series/amd-ryzen-3-2200g.html"
+    },
+    {
+      label: "AMD Ryzen 3 3200G support specs (PCIe 3.0 x8 graphics link)",
+      url: "https://www.amd.com/en/support/downloads/drivers.html/processors/ryzen/ryzen-3000-series/amd-ryzen-3-3200g.html"
+    },
+    {
+      label: "Intel Core i3-10100 specs (Max PCIe lanes: 16)",
+      url: "https://www.intel.com/content/www/us/en/products/sku/203473/intel-core-i310100-processor-6m-cache-up-to-4-30-ghz/specifications.html"
+    },
+    {
+      label: "Intel Core Ultra 5 245 specs (Max PCIe lanes: 20)",
+      url: "https://www.intel.com/content/www/us/en/products/sku/241058/intel-core-ultra-5-processor-245-24m-cache-up-to-5-10-ghz/specifications.html"
+    }
   ];
 
-  const intelZOnly = ["Z490", "Z590", "Z690", "Z790", "Z890"];
+  const COMMUNITY_SOURCES = [
+    {
+      label: "Tom's Hardware: Ryzen 3 1200 + GTX 1660 discussion (mentions slight bottleneck risk)",
+      url: "https://forums.tomshardware.com/threads/i-want-to-pair-my-ryzen-3-1200-with-a-new-gpu-a-1660.3583721/"
+    },
+    {
+      label: "Tom's Hardware: CPU for GTX 1660 thread (frequent Ryzen 5 2600 recommendation)",
+      url: "https://forums.tomshardware.com/threads/cpu-for-gtx-1660.3473641/"
+    },
+    {
+      label: "r/buildapc: GTX 1080 Ti + Ryzen 5 2600 pairing experiences",
+      url: "https://www.reddit.com/r/buildapc/comments/bpbzlt/will_i_be_bottlenecking_my_system_with_a_gtx/"
+    },
+    {
+      label: "Tom's Hardware: Ryzen 5 7600 + RTX 4060 Ti bottleneck discussion",
+      url: "https://forums.tomshardware.com/threads/amd-ryzen-5-7600-and-rtx-4060-ti-bottleneck.3858382/"
+    },
+    {
+      label: "Intel Arc desktop quick start (ReBAR guidance)",
+      url: "https://www.intel.com/content/www/us/en/support/articles/000091128/graphics/intel-arc-dedicated-graphics-family.html"
+    }
+  ];
 
   const stringTailNumber = (value) => {
     const match = String(value || "").match(/(\d{3,5})/);
@@ -336,6 +188,95 @@
     return map[generation] || "Intel Core desktop";
   };
 
+  const AMD_LANE_OVERRIDES = [
+    {
+      pattern: /\b8500G\b/i,
+      total: 14,
+      usable: 10,
+      gpu: 4,
+      nvme: 2,
+      chipset: 4,
+      source: "AMD 8500G specs (Native PCIe lanes 14/10)."
+    },
+    {
+      pattern: /\b(8600G|8700G)\b/i,
+      total: 20,
+      usable: 16,
+      gpu: 8,
+      nvme: 4,
+      chipset: 4,
+      source: "AMD 8600G/8700G specs (Native PCIe lanes 20/16)."
+    },
+    {
+      pattern: /\b4600G\b/i,
+      total: 24,
+      usable: 20,
+      gpu: 16,
+      nvme: 4,
+      chipset: 4,
+      source: "AMD 4600G support specs (Native PCIe lanes 24/20)."
+    },
+    {
+      pattern: /\b3400G\b/i,
+      total: 20,
+      usable: 16,
+      gpu: 8,
+      nvme: 4,
+      chipset: 4,
+      source: "AMD 3400G support specs (Native PCIe lanes 20/16)."
+    },
+    {
+      pattern: /\b(2200G|2400G|3200G)\b/i,
+      total: null,
+      usable: null,
+      gpu: 8,
+      nvme: 4,
+      chipset: 4,
+      source: "AMD support specs list PCIe 3.0 x8 for graphics; total native lane count is not explicitly listed on these pages."
+    },
+    {
+      pattern: /\b(5500GT|5600G|5600GT|5700G)\b/i,
+      total: 24,
+      usable: 20,
+      gpu: 16,
+      nvme: 4,
+      chipset: 4,
+      source: "Inferred from AMD Cezanne/Renoir desktop support specs (4600G/5700 family lane behavior).",
+      inferred: true
+    }
+  ];
+
+  const WEAK_4C4T_MODELS = /\b(1200|1300X|2200G|3200G)\b/i;
+  const ENTRY_APU_4C4T_MODELS = /\b(2200G|3200G)\b/i;
+
+  const resolveAmdLaneProfile = ({ label, isG }) => {
+    const override = AMD_LANE_OVERRIDES.find((item) => item.pattern.test(label || ""));
+    if (override) {
+      return override;
+    }
+
+    if (isG) {
+      return {
+        total: 24,
+        usable: 20,
+        gpu: 16,
+        nvme: 4,
+        chipset: 4,
+        source: "Defaulted to desktop Ryzen APU lane profile (review this model manually if exact AMD specs differ).",
+        inferred: true
+      };
+    }
+
+    return {
+      total: 24,
+      usable: 20,
+      gpu: 16,
+      nvme: 4,
+      chipset: 4,
+      source: "Desktop Ryzen CPU standard lane profile."
+    };
+  };
+
   const analyzeCpu = (label) => {
     if (!label) {
       return null;
@@ -370,8 +311,9 @@
         }
       }
 
-      const totalLanes = isG ? 20 : 24;
-      const gpuLanes = isG ? 8 : 16;
+      const laneProfile = resolveAmdLaneProfile({ label: normalized, isG });
+      const isWeak4c4t = WEAK_4C4T_MODELS.test(normalized);
+      const isEntryApu4c4t = ENTRY_APU_4C4T_MODELS.test(normalized);
 
       return {
         type: "cpu",
@@ -383,12 +325,20 @@
         model,
         series,
         pcie,
-        totalLanes,
-        gpuLanes,
+        totalLanes: laneProfile.total,
+        usableLanes: laneProfile.usable,
+        gpuLanes: laneProfile.gpu,
+        nvmeLanes: laneProfile.nvme,
+        chipsetLinkLanes: laneProfile.chipset,
+        laneSource: laneProfile.source,
+        laneSourceInferred: Boolean(laneProfile.inferred),
         isG,
         isX,
         isX3d,
-        isX600: tier === 5 && /\b\d{4,5}X\b/i.test(normalized) && /600\b/.test(String(model || ""))
+        isX600: tier === 5 && /\b\d{4,5}X\b/i.test(normalized) && /600\b/.test(String(model || "")),
+        isWeak4c4t,
+        isEntryApu4c4t,
+        hasSevereGpuLaneLimit: laneProfile.gpu <= 4
       };
     }
 
@@ -415,25 +365,25 @@
         socket = "LGA1200";
       }
 
-      const architecture = parseIntelArchitecture(generation, isCoreUltra);
-      const pcie = isCoreUltra || generation >= 12 ? 5 : generation === 11 ? 4 : 3;
-      const totalLanes = generation >= 11 || isCoreUltra ? 20 : 16;
-
       return {
         type: "cpu",
         vendor: "intel",
         label: normalized,
-        architecture,
+        architecture: parseIntelArchitecture(generation, isCoreUltra),
         socket,
         tier,
         generation,
         model,
-        pcie,
-        totalLanes,
+        pcie: isCoreUltra || generation >= 12 ? 5 : generation === 11 ? 4 : 3,
+        totalLanes: generation >= 11 || isCoreUltra ? 20 : 16,
+        usableLanes: generation >= 11 || isCoreUltra ? 20 : 16,
         gpuLanes: 16,
+        nvmeLanes: generation >= 11 || isCoreUltra ? 4 : 0,
+        chipsetLinkLanes: null,
+        laneSource: "Intel ARK max PCIe lanes vary by generation (10th-gen class often 16, newer mainstream desktop classes 20).",
+        laneSourceInferred: false,
         isK: /\bK(F|S)?\b/i.test(normalized) || /\d{3,5}K(F|S)?\b/i.test(normalized),
         is600Class: /\b\d{4,5}\b/.test(String(model || "")) && /600\b/.test(String(model || "")),
-        is400Class: /\b\d{4,5}\b/.test(String(model || "")) && /400\b/.test(String(model || "")),
         isCoreUltra
       };
     }
@@ -447,7 +397,12 @@
       tier: null,
       pcie: 3,
       totalLanes: null,
-      gpuLanes: null
+      usableLanes: null,
+      gpuLanes: null,
+      nvmeLanes: null,
+      chipsetLinkLanes: null,
+      laneSource: null,
+      laneSourceInferred: false
     };
   };
 
@@ -466,8 +421,7 @@
         vendor: null,
         socket: null,
         tier: "entry",
-        pcie: 3,
-        lanesNote: "Unknown chipset profile."
+        pcie: 3
       };
     }
 
@@ -490,10 +444,6 @@
 
     if (/RX\s*6600|RX\s*6600\s*XT|RX\s*6650\s*XT|RX\s*5500\s*XT|ARC\s*A380|ARC\s*A310/i.test(label)) {
       return 8;
-    }
-
-    if (/ARC\s*A770|ARC\s*A750|ARC\s*A580|ARC\s*B580|ARC\s*B570/i.test(label)) {
-      return 16;
     }
 
     return 16;
@@ -583,10 +533,7 @@
       architecture,
       pcie,
       interfaceLanes: gpuInterfaceByModel(normalized),
-      generationGroup,
-      isEntryRtx: /RTX\s*(3050|3060|4060|5050|5060)/i.test(normalized),
-      isLegacyNvidia: /GTX\s*10|GTX\s*16|RTX\s*20/i.test(normalized),
-      isLegacyAmd: /RX\s*4\d{2}|RX\s*5\d{2}|VEGA|RADEON\s+VII|RX\s*5\d{3}/i.test(normalized)
+      generationGroup
     };
   };
 
@@ -601,13 +548,20 @@
       uniquePush(lines, `Socket platform: ${cpu.socket}`);
     }
     uniquePush(lines, `CPU PCIe capability: Gen ${cpu.pcie}`);
-
-    if (cpu.totalLanes && cpu.gpuLanes) {
-      uniquePush(lines, `Typical CPU lane map: ${cpu.totalLanes} total lanes (${cpu.gpuLanes} for GPU + 4 NVMe + chipset link)`);
+    if (cpu.totalLanes != null && cpu.usableLanes != null) {
+      uniquePush(lines, `Native PCIe lanes (total/usable): ${cpu.totalLanes}/${cpu.usableLanes}`);
     }
-
-    if (cpu.vendor === "amd" && cpu.isG) {
-      uniquePush(lines, "Ryzen G note: usually reduced PCIe GPU lane width (often x8), so memory tuning matters more.");
+    if (cpu.gpuLanes != null) {
+      uniquePush(lines, `Direct GPU lane budget: x${cpu.gpuLanes}`);
+    }
+    if (cpu.nvmeLanes != null) {
+      uniquePush(lines, `Direct NVMe lane budget: x${cpu.nvmeLanes}`);
+    }
+    if (cpu.hasSevereGpuLaneLimit) {
+      uniquePush(lines, "Warning: this CPU exposes only x4 lanes to the dGPU slot, so discrete-GPU pairing headroom is severely limited.");
+    }
+    if (cpu.laneSource) {
+      uniquePush(lines, cpu.laneSourceInferred ? `Lane source note (inferred): ${cpu.laneSource}` : `Lane source: ${cpu.laneSource}`);
     }
 
     return lines;
@@ -618,15 +572,12 @@
       return [];
     }
 
-    const lines = [];
-    uniquePush(lines, `Chipset: ${board.chipset}`);
-    if (board.socket) {
-      uniquePush(lines, `Socket family: ${board.socket}`);
-    }
-    uniquePush(lines, `Chipset PCIe generation target: up to Gen ${board.pcie}`);
-    uniquePush(lines, `Tier class: ${board.tier}`);
-    uniquePush(lines, board.lanesNote);
-    return lines;
+    return [
+      `Chipset: ${board.chipset}`,
+      board.socket ? `Socket family: ${board.socket}` : "Socket family: unknown",
+      `Chipset PCIe generation target: up to Gen ${board.pcie}`,
+      `Tier class: ${board.tier}`
+    ];
   };
 
   const describeGpu = (gpu) => {
@@ -634,13 +585,7 @@
       return [];
     }
 
-    const lines = [];
-    uniquePush(lines, `Architecture: ${gpu.architecture}`);
-    uniquePush(lines, `Typical interface: PCIe Gen ${gpu.pcie} x${gpu.interfaceLanes}`);
-    if (gpu.isEntryRtx) {
-      uniquePush(lines, "Entry RTX note: reduced lane-width models are more sensitive to old PCIe platforms.");
-    }
-    return lines;
+    return [`Architecture: ${gpu.architecture}`, `Typical interface: PCIe Gen ${gpu.pcie} x${gpu.interfaceLanes}`];
   };
 
   const describeSelection = (type, selection) => {
@@ -659,196 +604,545 @@
     return [];
   };
 
-  const recommendBoardFromCpu = (cpu) => {
+  const cpuStrengthScore = (cpu) => {
     if (!cpu) {
-      return [];
+      return 1;
     }
 
-    const lines = [];
+    let score = 3;
 
     if (cpu.vendor === "amd") {
-      if (cpu.tier === 3) {
-        uniquePush(lines, "Ryzen 3: A320/A520 class boards are acceptable targets.");
-      }
+      if (cpu.tier === 3) score = 2;
+      if (cpu.tier === 5) score = 4;
+      if (cpu.tier === 7) score = 6;
+      if (cpu.tier === 9) score = 8;
 
-      if (cpu.tier === 5) {
-        if (cpu.isX600) {
-          uniquePush(lines, "Ryzen 5 X600 models: target B550 (AM4) or B650/B850 (AM5) for PCIe headroom.");
-        } else {
-          uniquePush(lines, "Ryzen 5 non-X600 models: entry chipsets can work, but B-series gives stronger long-term stability.");
+      if (cpu.series && cpu.series <= 1000) score -= 2;
+      else if (cpu.series && cpu.series <= 2000) score -= 1;
+      else if (cpu.series && cpu.series >= 7000) score += 2;
+      else if (cpu.series && cpu.series >= 5000) score += 1;
+
+      if (cpu.isG) score -= 1;
+      if (cpu.gpuLanes != null && cpu.gpuLanes <= 8) score -= 1;
+      if (cpu.hasSevereGpuLaneLimit) score -= 2;
+      if (cpu.isWeak4c4t) score -= 2;
+      if (cpu.isX3d) score += 1;
+    }
+
+    if (cpu.vendor === "intel") {
+      if (cpu.tier === 3) score = 3;
+      if (cpu.tier === 5) score = 5;
+      if (cpu.tier === 7) score = 7;
+      if (cpu.tier === 9) score = 8;
+
+      if (cpu.generation && cpu.generation <= 10) score -= 2;
+      else if (cpu.generation === 11) score -= 1;
+      else if (cpu.generation && cpu.generation >= 13 && cpu.generation <= 14) score += 1;
+      else if (cpu.generation && cpu.generation >= 15) score += 2;
+
+      if (cpu.isCoreUltra) score += 1;
+    }
+
+    return Math.max(1, Math.min(9, score));
+  };
+
+  const singleMotherboardForCpu = (cpu) => {
+    if (!cpu) {
+      return null;
+    }
+
+    if (cpu.vendor === "amd") {
+      if (cpu.socket === "AM4") {
+        if (cpu.tier === 3) {
+          if (cpu.series && cpu.series <= 2000) {
+            return {
+              model: "A320",
+              description: "Entry AM4 baseline for first/second-gen Ryzen 3 with legacy platform support."
+            };
+          }
+
+          return {
+            model: "A520",
+            description: "Entry AM4 pick for newer Ryzen 3 loads where a simple platform is still enough."
+          };
+        }
+
+        if (cpu.tier === 5) {
+          if (cpu.series && cpu.series <= 2000) {
+            return {
+              model: "B450",
+              description: "Balanced AM4 path for older Ryzen 5 generations on PCIe 3-era CPUs."
+            };
+          }
+
+          if (cpu.isX600 || (!cpu.isG && cpu.pcie >= 4)) {
+            return {
+              model: "B550",
+              description: "Balanced AM4 pick to preserve PCIe 4 support and reduce upgrade friction."
+            };
+          }
+
+          return {
+            model: "B450",
+            description: "Practical AM4 pick for lighter Ryzen 5 variants where full PCIe 4 is not critical."
+          };
+        }
+
+        if (cpu.tier === 7) {
+          if (cpu.series && cpu.series <= 2000) {
+            return {
+              model: "B450",
+              description: "Community-typical pairing for Ryzen 7 1000/2000 with PCIe 3-focused workloads."
+            };
+          }
+
+          return {
+            model: "B550",
+            description: "Recommended AM4 base for Ryzen 7 3000+ to expose PCIe 4 path properly."
+          };
+        }
+
+        if (cpu.tier === 9) {
+          return {
+            model: "X570",
+            description: "High-end AM4 recommendation for Ryzen 9 class CPUs and stronger I/O demand."
+          };
         }
       }
 
-      if (cpu.tier === 7) {
-        if (cpu.socket === "AM4" && cpu.series && cpu.series <= 2000) {
-          uniquePush(lines, "Ryzen 7 1000/2000: B450 is typically enough because these CPUs are PCIe 3 focused.");
-        } else if (cpu.socket === "AM4") {
-          uniquePush(lines, "Ryzen 7 3000+ AM4: use at least B550 to leverage PCIe 4 capability.");
-        } else {
-          uniquePush(lines, "Ryzen 7 AM5: use at least B650/B850 tier motherboard.");
+      if (cpu.socket === "AM5") {
+        if (cpu.tier === 9) {
+          return {
+            model: "X670",
+            description: "High-end AM5 recommendation for Ryzen 9 class with stronger platform headroom."
+          };
         }
-      }
 
-      if (cpu.tier === 9) {
-        if (cpu.socket === "AM4") {
-          uniquePush(lines, "Ryzen 9 AM4: target X570 class motherboards.");
-        } else {
-          uniquePush(lines, "Ryzen 9 AM5: target X670/X870 class motherboards.");
-        }
-      }
-
-      if (cpu.isG) {
-        uniquePush(lines, "All Ryzen G models: use 2 identical RAM DIMMs at the highest stable speed; avoid mixed kits.");
+        return {
+          model: "B650",
+          description: "Mainstream AM5 recommendation for Ryzen 5/7 class and PCIe 5-ready platform path."
+        };
       }
     }
 
     if (cpu.vendor === "intel") {
-      if (cpu.tier === 3) {
-        uniquePush(lines, "Intel i3: Hx10 entry boards are valid choices.");
-      }
-
-      if (cpu.tier === 5) {
-        if (cpu.isK) {
-          uniquePush(lines, "Intel i5 K models: at least B-series board, with Z-series recommended.");
-        } else if (cpu.is600Class) {
-          uniquePush(lines, "Intel i5 x600 models: avoid weak entry boards; good H610 minimum, B-series recommended.");
-        } else {
-          uniquePush(lines, "Intel i5 non-K lower classes can run on entry boards, though B-series remains preferred.");
+      if (cpu.socket === "LGA1200") {
+        if (cpu.tier === 3) {
+          return {
+            model: "H510",
+            description: "Simple Intel entry recommendation for i3 class on LGA1200."
+          };
         }
+
+        if (cpu.isK || cpu.tier >= 7) {
+          return {
+            model: "Z590",
+            description: "Recommended for K / upper Intel tiers on LGA1200 due stronger VRM and tuning headroom."
+          };
+        }
+
+        return {
+          model: "B560",
+          description: "Balanced LGA1200 choice for most i5 non-K builds."
+        };
       }
 
-      if (cpu.tier === 7 || cpu.tier === 9) {
-        uniquePush(lines, "Intel i7/i9: use strong B-series minimum, Z-series recommended.");
+      if (cpu.socket === "LGA1700") {
+        if (cpu.tier === 3) {
+          return {
+            model: "H610",
+            description: "Entry LGA1700 recommendation for i3 class systems."
+          };
+        }
+
+        if (cpu.isK || cpu.tier >= 7) {
+          return {
+            model: "Z790",
+            description: "Recommended for K / upper Intel tiers on LGA1700 where sustained power and tuning matter."
+          };
+        }
+
+        return {
+          model: "B760",
+          description: "Balanced LGA1700 pick for mainstream i5 non-K performance and expansion."
+        };
+      }
+
+      if (cpu.socket === "LGA1851") {
+        if (cpu.tier === 3) {
+          return {
+            model: "H810",
+            description: "Entry LGA1851 recommendation for lower Core Ultra tiers."
+          };
+        }
+
+        if (cpu.isK || cpu.tier >= 7) {
+          return {
+            model: "Z890",
+            description: "Top LGA1851 recommendation for high-tier or K-class Core Ultra builds."
+          };
+        }
+
+        return {
+          model: "B860",
+          description: "Mainstream LGA1851 choice for balanced Core Ultra 5/7 usage."
+        };
       }
     }
 
-    return lines;
+    return null;
   };
 
-  const recommendCpuForGpu = (gpu) => {
-    if (!gpu) {
-      return [];
+  const singleGpuTripletForCpu = (cpu) => {
+    const score = cpuStrengthScore(cpu);
+
+    const pick = (vendor, model, description) => ({ vendor, model, description });
+
+    if (cpu?.hasSevereGpuLaneLimit) {
+      return [
+        pick("NVIDIA", "Not Recommended (Use iGPU)", "This CPU only exposes PCIe x4 to the GPU slot, so a discrete NVIDIA card is generally a bad match."),
+        pick("AMD", "Not Recommended (Use iGPU)", "This CPU only exposes PCIe x4 to the GPU slot, which heavily limits dedicated GPU scaling."),
+        pick("Intel", "Not Recommended (Use iGPU)", "This CPU only exposes PCIe x4 to the GPU slot, making Arc pairing generally impractical.")
+      ];
     }
 
-    const lines = [];
+    if (cpu?.isEntryApu4c4t) {
+      return [
+        pick("NVIDIA", "GTX 1050 Ti 4GB", "For entry 4c/4t APUs like 2200G/3200G, GTX 1060-class cards are frequently CPU-limited."),
+        pick("AMD", "RX 570 4GB", "Safer top-end legacy pairing for low-thread APUs before heavy CPU bottlenecks dominate."),
+        pick("Intel", "Arc A310", "Lowest Arc tier only; weak 4c/4t APUs are not good Arc pairing targets.")
+      ];
+    }
 
-    if (gpu.pcie >= 4) {
-      uniquePush(lines, "PCIe Gen4/Gen5 GPU selected: prefer CPU + motherboard combo that can expose PCIe 4+ lanes.");
+    if (score <= 1) {
+      return [
+        pick("NVIDIA", "GTX 1060 6GB", "For CPUs like Ryzen 3 1200, forum guidance is to stay around GTX 1060 class to avoid heavy bottlenecks."),
+        pick("AMD", "RX 570 8GB", "Safer legacy pairing for 4c/4t low single-core CPUs to keep frame pacing more consistent."),
+        pick("Intel", "Arc A380", "Lowest Arc tier recommendation for weaker CPUs; keep ReBAR enabled for expected performance.")
+      ];
+    }
+
+    if (score <= 2) {
+      return [
+        pick("NVIDIA", "GTX 1660 SUPER 6GB", "Balanced legacy-modern pick for lower mainstream CPUs without overshooting GPU class."),
+        pick("AMD", "RX 6600 8GB", "Common value pairing for entry-to-mid CPU tiers at 1080p."),
+        pick("Intel", "Arc A580", "Entry Arc recommendation on platforms with stable ReBAR support.")
+      ];
+    }
+
+    if (score <= 4) {
+      return [
+        pick("NVIDIA", "RTX 3060 12GB", "Frequent community recommendation for mid CPU tiers without overspending GPU power."),
+        pick("AMD", "RX 6700 XT 12GB", "Balanced mid-tier pairing that avoids strong CPU bottlenecks in many 1080p/1440p cases."),
+        pick("Intel", "Arc A750", "Solid mid-tier Arc pick when platform supports ReBAR properly.")
+      ];
+    }
+
+    if (score <= 6) {
+      return [
+        pick("NVIDIA", "RTX 4060 Ti 8GB", "Community-consistent mid/high pairing for modern 6-core to 8-core CPUs."),
+        pick("AMD", "RX 7700 XT 12GB", "Strong upper-mid pairing without jumping to very CPU-demanding flagship GPU tiers."),
+        pick("Intel", "Arc A770 16GB", "Upper Arc pairing for stronger CPUs, still dependent on good ReBAR platform support.")
+      ];
+    }
+
+    if (score <= 7) {
+      return [
+        pick("NVIDIA", "RTX 4070 SUPER 12GB", "High-tier pairing suitable for strong CPUs while keeping bottleneck risk moderate."),
+        pick("AMD", "RX 7800 XT 16GB", "High-tier Radeon match for stronger CPU classes in 1440p-focused builds."),
+        pick("Intel", "Arc B580", "Best-current Intel Arc recommendation for stronger CPU tiers.")
+      ];
+    }
+
+    return [
+      pick("NVIDIA", "RTX 4080 SUPER 16GB", "High-end pick for top CPU tiers where GPU scaling remains meaningful."),
+      pick("AMD", "RX 7900 XT 20GB", "High-end Radeon pick for top-tier CPU platforms."),
+      pick("Intel", "Arc B580", "Current Intel Arc flagship-like practical recommendation; ReBAR remains important.")
+    ];
+  };
+
+  const gpuPerformanceTier = (gpu) => {
+    if (!gpu?.label) {
+      return 3;
+    }
+
+    const label = gpu.label.toUpperCase();
+
+    if (gpu.vendor === "nvidia") {
+      const rtxMatch = label.match(/RTX\s*(\d{4})/i);
+      if (rtxMatch) {
+        const model = Number(rtxMatch[1]);
+
+        if (model <= 2060) return 2;
+        if (model <= 3060) return 3;
+        if (model <= 4060) return 4;
+        if (model <= 5050) return 3;
+        if (model <= 5060) return 4;
+        if (model <= 5070) return 5;
+        return 6;
+      }
+
+      const gtxMatch = label.match(/GTX\s*(\d{3,4})/i);
+      if (gtxMatch) {
+        const model = Number(gtxMatch[1]);
+        if (model <= 1060) return 1;
+        if (model <= 1660) return 2;
+        return 3;
+      }
+    }
+
+    if (gpu.vendor === "amd") {
+      const rxMatch = label.match(/RX\s*(\d{3,4})/i);
+      if (rxMatch) {
+        const model = Number(rxMatch[1]);
+
+        if (model < 1000) {
+          if (model <= 580) return 1;
+          return 2;
+        }
+
+        if (model >= 5000 && model < 6000) {
+          if (model <= 5500) return 2;
+          return 3;
+        }
+
+        if (model >= 6000 && model < 7000) {
+          if (model <= 6600) return 3;
+          if (model <= 6750) return 4;
+          return 5;
+        }
+
+        if (model >= 7000 && model < 9000) {
+          if (model <= 7600) return 4;
+          if (model <= 7800) return 5;
+          return 6;
+        }
+
+        if (model >= 9000) {
+          if (model <= 9060) return 5;
+          return 6;
+        }
+      }
+    }
+
+    if (gpu.vendor === "intel") {
+      if (/A310|A380/i.test(label)) return 1;
+      if (/A580/i.test(label)) return 2;
+      if (/A750|A770|B570/i.test(label)) return 3;
+      if (/B580/i.test(label)) return 5;
+      return 3;
+    }
+
+    return 3;
+  };
+
+  const singleCpuForGpu = (gpu) => {
+    if (!gpu) {
+      return null;
     }
 
     if (gpu.vendor === "nvidia" && gpu.generationGroup === "gtx10") {
-      uniquePush(lines, "GTX 10-series fits best with i3, Ryzen 3, entry Ryzen 5, and 1st-gen Ryzen 7 class pairings.");
-      if (/1080\s*TI/i.test(gpu.label)) {
-        uniquePush(lines, "GTX 1080 Ti class usually benefits from Ryzen 5 2600 / i5-level and up, not low-end CPUs.");
-      }
+      return {
+        model: "Ryzen 5 2600",
+        description: "Community pairing guidance for GTX 10 high-end cards (including 1080 Ti class) often lands around Ryzen 5 2600."
+      };
     }
 
-    if (gpu.isEntryRtx) {
-      uniquePush(lines, "Entry RTX cards pair best with AM5 or Intel 12th-gen+ when possible for cleaner PCIe behavior.");
+    if (gpu.vendor === "nvidia" && (gpu.generationGroup === "gtx16" || gpu.generationGroup === "rtx20")) {
+      return {
+        model: "Ryzen 5 3600",
+        description: "Common practical baseline for GTX 16 / RTX 20 class cards with improved frame-time stability versus older quad-core CPUs."
+      };
     }
 
-    if (gpu.vendor === "amd" && gpu.isLegacyAmd) {
-      uniquePush(lines, "Legacy Radeon cards are often balanced with Ryzen 3/5 or i3/i5 class systems and PCIe 3/4 boards.");
+    const tier = gpuPerformanceTier(gpu);
+
+    if (tier <= 1) {
+      return {
+        model: "Ryzen 5 2600",
+        description: "Conservative baseline for legacy and entry GPUs where older 4c/4t CPUs frequently bottleneck."
+      };
     }
 
-    return lines;
+    if (tier === 2) {
+      return {
+        model: "Ryzen 5 3600",
+        description: "Balanced mainstream baseline for lower-mid GPUs without jumping to expensive platform tiers."
+      };
+    }
+
+    if (tier === 3) {
+      return {
+        model: "Core i5-12400F",
+        description: "Modern 6-core baseline for entry modern GPUs (such as RTX 5050 class) without the overkill of high-end 8-core parts."
+      };
+    }
+
+    if (tier === 4) {
+      return {
+        model: "Ryzen 5 7600",
+        description: "Strong upper-mid baseline for cards around RTX 4060 Ti / RX 7600 XT class."
+      };
+    }
+
+    if (tier === 5) {
+      return {
+        model: "Ryzen 7 9700X",
+        description: "High-tier baseline for stronger 1440p-focused GPUs where CPU frame pacing matters more."
+      };
+    }
+
+    return {
+      model: "Ryzen 7 9700X",
+      description: "High-end baseline for top-tier GPUs while avoiding unrealistic flagship CPU recommendations."
+    };
   };
 
-  const validateCpuBoardMatch = (cpu, board, warnings) => {
-    if (!cpu || !board) {
-      return;
-    }
-
-    if (cpu.vendor && board.vendor && cpu.vendor !== board.vendor) {
-      uniquePush(warnings, "CPU vendor and motherboard vendor family do not match.");
-      return;
-    }
-
-    if (cpu.socket && board.socket && cpu.socket !== board.socket) {
-      uniquePush(warnings, `Socket mismatch: CPU expects ${cpu.socket} while board is ${board.socket}.`);
-      return;
-    }
-
-    if (cpu.vendor === "amd") {
-      if (cpu.tier === 7) {
-        if (cpu.socket === "AM4" && cpu.series && cpu.series <= 2000) {
-          if (board.chipset === "A320" || board.chipset === "A520") {
-            uniquePush(warnings, "Ryzen 7 1000/2000 is better matched to B450 or better than A-class entry chipsets.");
-          }
-        } else if (cpu.socket === "AM4" && !["B550", "X570"].includes(board.chipset)) {
-          uniquePush(warnings, "Ryzen 7 3000+ should be on B550 or X570 to align with PCIe 4 capability.");
-        } else if (cpu.socket === "AM5" && !amdMidAm5.includes(board.chipset)) {
-          uniquePush(warnings, "Ryzen 7 AM5 should use at least B650/B850 class boards.");
-        }
-      }
-
-      if (cpu.tier === 9) {
-        if (cpu.socket === "AM4" && board.chipset !== "X570") {
-          uniquePush(warnings, "Ryzen 9 AM4 is recommended on X570-class boards.");
-        }
-
-        if (cpu.socket === "AM5" && !amdHighAm5.includes(board.chipset)) {
-          uniquePush(warnings, "Ryzen 9 AM5 is recommended on X670/X870 class boards.");
-        }
-      }
-
-      if (cpu.tier === 5 && cpu.isX600) {
-        if (cpu.socket === "AM4" && !["B550", "X570"].includes(board.chipset)) {
-          uniquePush(warnings, "Ryzen 5 X600 AM4 models should be paired to B550/X570 for better PCIe 4 usage.");
-        }
-
-        if (cpu.socket === "AM5" && !amdMidAm5.includes(board.chipset)) {
-          uniquePush(warnings, "Ryzen 5 X600 AM5 models should be paired to B650/B850 or higher.");
-        }
-      }
-    }
-
-    if (cpu.vendor === "intel") {
-      if (cpu.tier === 5) {
-        if (cpu.isK && !intelBOrZ.includes(board.chipset)) {
-          uniquePush(warnings, "Intel i5 K models should be on at least B-series boards; Z-series is preferred.");
-        }
-
-        if (cpu.is600Class && ["H410", "H510"].includes(board.chipset)) {
-          uniquePush(warnings, "Intel i5 x600 models are better on stronger H610/B-series boards than H410/H510.");
-        }
-      }
-
-      if ((cpu.tier === 7 || cpu.tier === 9) && !intelBOrZ.includes(board.chipset)) {
-        uniquePush(warnings, "Intel i7/i9 are not ideal on entry H-chipsets. Use strong B-series or Z-series boards.");
-      }
-
-      if (cpu.isK && intelBOrZ.includes(board.chipset) && !intelZOnly.includes(board.chipset)) {
-        uniquePush(warnings, "K-series CPUs work on B-series, but Z-series is recommended for full tuning capability.");
-      }
-    }
-  };
-
-  const validateGpuPath = (cpu, board, gpu, warnings) => {
+  const singleMotherboardForGpu = (gpu) => {
     if (!gpu) {
-      return;
+      return null;
     }
 
-    if (cpu && gpu.pcie > cpu.pcie) {
-      uniquePush(
-        warnings,
-        `GPU expects PCIe Gen ${gpu.pcie} path, but selected CPU lane capability is closer to Gen ${cpu.pcie}.`
-      );
+    if (gpu.vendor === "intel") {
+      return {
+        model: "B760",
+        description: "Recommended to keep ReBAR support straightforward on modern Intel platforms for Arc stability/performance."
+      };
     }
 
-    if (board && gpu.pcie > board.pcie) {
-      uniquePush(
-        warnings,
-        `GPU expects PCIe Gen ${gpu.pcie} path, but selected chipset class is closer to Gen ${board.pcie}.`
-      );
+    if (gpu.pcie >= 5) {
+      return {
+        model: "B650E",
+        description: "Modern PCIe Gen5-ready baseline for latest GPU tiers."
+      };
     }
 
-    if (cpu?.vendor === "amd" && cpu.isG && gpu.pcie >= 4) {
-      uniquePush(
-        warnings,
-        "Ryzen G + PCIe 4 GPU: monitor reduced GPU lane-width behavior and use fast matched dual-channel RAM."
-      );
+    if (gpu.pcie === 4) {
+      return {
+        model: "B550",
+        description: "Practical PCIe Gen4 baseline for mainstream modern GPUs."
+      };
     }
+
+    return {
+      model: "B450",
+      description: "Good cost-effective baseline for legacy PCIe Gen3 GPU tiers."
+    };
+  };
+
+  const singleCpuForBoard = (board) => {
+    if (!board) {
+      return null;
+    }
+
+    if (board.vendor === "amd") {
+      if (["A320", "A520"].includes(board.chipset)) {
+        return {
+          model: "Ryzen 5 3600",
+          description: "Reasonable upper target for entry AM4 boards while keeping CPU load realistic."
+        };
+      }
+
+      if (["B450"].includes(board.chipset)) {
+        return {
+          model: "Ryzen 5 5600",
+          description: "Popular AM4 upgrade path with wide board support and balanced gaming behavior."
+        };
+      }
+
+      if (["B550"].includes(board.chipset)) {
+        return {
+          model: "Ryzen 7 5700X",
+          description: "Balanced upper AM4 target with PCIe 4-capable platform path."
+        };
+      }
+
+      if (["X570"].includes(board.chipset)) {
+        return {
+          model: "Ryzen 9 5900X",
+          description: "High-end AM4 pairing target for stronger workstation/gaming loads."
+        };
+      }
+
+      if (["A620"].includes(board.chipset)) {
+        return {
+          model: "Ryzen 5 7600",
+          description: "Practical AM5 baseline target on entry AM5 chipset."
+        };
+      }
+
+      if (["B650", "B650E", "B850"].includes(board.chipset)) {
+        return {
+          model: "Ryzen 7 7700",
+          description: "Balanced AM5 target for mainstream/high gaming use."
+        };
+      }
+
+      return {
+        model: "Ryzen 9 7900X",
+        description: "High-end AM5 target for X670/X870 class boards."
+      };
+    }
+
+    if (board.vendor === "intel") {
+      if (["H410", "H510"].includes(board.chipset)) {
+        return {
+          model: "Core i3-10100",
+          description: "Entry CPU target aligned with lower-power board tier."
+        };
+      }
+
+      if (["H610", "H810"].includes(board.chipset)) {
+        return {
+          model: board.socket === "LGA1851" ? "Core Ultra 5 245" : "Core i3-12100F",
+          description: "Entry-modern CPU target matched to H-tier board constraints."
+        };
+      }
+
+      if (["B460", "B560", "B660", "B760", "B860", "H670", "H770"].includes(board.chipset)) {
+        return {
+          model: board.socket === "LGA1200" ? "Core i5-11400" : board.socket === "LGA1851" ? "Core Ultra 5 245" : "Core i5-13400F",
+          description: "Balanced mid-tier CPU target for mainstream Intel chipset classes."
+        };
+      }
+
+      return {
+        model: board.socket === "LGA1200" ? "Core i7-11700K" : board.socket === "LGA1851" ? "Core Ultra 7 265K" : "Core i7-13700K",
+        description: "High-tier CPU target for Z-class board capabilities."
+      };
+    }
+
+    return null;
+  };
+
+  const singleGpuTripletForBoard = (board) => {
+    if (!board) {
+      return [];
+    }
+
+    const pick = (vendor, model, description) => ({ vendor, model, description });
+
+    if (board.pcie <= 3) {
+      return [
+        pick("NVIDIA", "GTX 1060 6GB", "Safer legacy pairing for PCIe Gen3-oriented boards."),
+        pick("AMD", "RX 570 8GB", "Conservative legacy Radeon pairing for older platform lanes."),
+        pick("Intel", "Arc A380", "Entry Arc option; verify ReBAR support on this board first.")
+      ];
+    }
+
+    if (board.pcie === 4) {
+      return [
+        pick("NVIDIA", "RTX 4060 8GB", "Balanced modern pairing for PCIe Gen4-capable board path."),
+        pick("AMD", "RX 7600 XT 16GB", "Modern mainstream pairing with good Gen4 utilization."),
+        pick("Intel", "Arc A750", "Practical Arc pick for boards with stable ReBAR support.")
+      ];
+    }
+
+    return [
+      pick("NVIDIA", "RTX 4070 SUPER 12GB", "High-tier pairing suited for newer chipset lane capacity."),
+      pick("AMD", "RX 7800 XT 16GB", "High-tier Radeon pairing for Gen5-capable board classes."),
+      pick("Intel", "Arc B580", "Best current Intel Arc recommendation on newer board classes.")
+    ];
   };
 
   const evaluate = (selections) => {
@@ -856,42 +1150,12 @@
     const motherboard = analyzeMotherboard(selections?.motherboard || null);
     const gpu = analyzeGpu(selections?.gpu?.label || "");
 
-    const recommendations = [];
-    const warnings = [];
-
-    if (cpu) {
-      recommendBoardFromCpu(cpu).forEach((line) => uniquePush(recommendations, line));
-    }
-
-    if (gpu) {
-      recommendCpuForGpu(gpu).forEach((line) => uniquePush(recommendations, line));
-    }
-
-    validateCpuBoardMatch(cpu, motherboard, warnings);
-    validateGpuPath(cpu, motherboard, gpu, warnings);
-
-    const selectedCount = Number(Boolean(selections?.cpu)) + Number(Boolean(selections?.motherboard)) + Number(Boolean(selections?.gpu));
-
-    if (selectedCount === 0) {
-      uniquePush(
-        recommendations,
-        "Select a CPU, motherboard chipset, or GPU first. The assistant will build a compatibility combo as you choose parts."
-      );
-    }
-
-    if (selectedCount === 1) {
-      uniquePush(
-        recommendations,
-        "Select the other two categories so the engine can resolve socket, chipset tier, and PCIe generation fit end-to-end."
-      );
-    }
-
     return {
       cpu,
       motherboard,
       gpu,
-      recommendations,
-      warnings,
+      recommendations: [],
+      warnings: [],
       snapshots: {
         cpu: describeCpu(cpu),
         motherboard: describeMotherboard(motherboard),
@@ -900,219 +1164,17 @@
     };
   };
 
-  const boardSuggestionsFromCpu = (cpu) => {
-    const lines = [];
-    if (!cpu) {
-      return lines;
-    }
-
-    recommendBoardFromCpu(cpu).forEach((line) => uniquePush(lines, line));
-
-    if (cpu.vendor === "amd") {
-      if (cpu.tier === 3) {
-        uniquePush(lines, "Chipset targets: A320 / A520 (AM4 entry class).");
-      } else if (cpu.tier === 5) {
-        if (cpu.isX600) {
-          uniquePush(
-            lines,
-            cpu.socket === "AM4"
-              ? "Chipset targets: B550 or X570."
-              : "Chipset targets: B650 / B650E / B850 (or higher)."
-          );
-        } else {
-          uniquePush(
-            lines,
-            cpu.socket === "AM4"
-              ? "Chipset targets: A320/A520/B450/B550 based on board quality goals."
-              : "Chipset targets: A620 for basic, B650/B850 for balanced builds."
-          );
-        }
-      } else if (cpu.tier === 7) {
-        uniquePush(
-          lines,
-          cpu.socket === "AM4" && cpu.series && cpu.series <= 2000
-            ? "Chipset targets: B450 or X470."
-            : cpu.socket === "AM4"
-              ? "Chipset targets: B550 or X570."
-              : "Chipset targets: B650/B850 minimum."
-        );
-      } else if (cpu.tier === 9) {
-        uniquePush(lines, cpu.socket === "AM4" ? "Chipset target: X570." : "Chipset targets: X670/X670E/X870/X870E.");
-      }
-    }
-
-    if (cpu.vendor === "intel") {
-      if (cpu.tier === 3) {
-        uniquePush(lines, "Chipset targets: H410/H510/H610/H810 or B-series.");
-      } else if (cpu.tier === 5) {
-        if (cpu.isK) {
-          uniquePush(lines, "Chipset targets: B660/B760/B860 minimum, Z690/Z790/Z890 preferred.");
-        } else if (cpu.is600Class) {
-          uniquePush(lines, "Chipset targets: good H610 minimum, B-series preferred.");
-        } else {
-          uniquePush(lines, "Chipset targets: H-series works, B-series preferred for better VRM and expansion.");
-        }
-      } else if (cpu.tier === 7 || cpu.tier === 9) {
-        uniquePush(lines, "Chipset targets: strong B-series or Z-series.");
-      }
-    }
-
-    return lines;
-  };
-
-  const gpuSuggestionsFromCpu = (cpu) => {
-    const lines = [];
-    if (!cpu) {
-      return lines;
-    }
-
-    if (cpu.vendor === "amd") {
-      if (cpu.tier === 3) {
-        uniquePush(lines, "Good GPU range: GTX 10/16, RTX 2060/3050 class, RX 500 to RX 6600 class.");
-      } else if (cpu.tier === 5) {
-        uniquePush(lines, "Good GPU range: RTX 3060/4060 up to RTX 4070 class, RX 6600 to RX 7800 XT class.");
-      } else {
-        uniquePush(lines, "Good GPU range: RTX 4070 Ti/4080+ and RX 7900 class can be paired appropriately.");
-      }
-    }
-
-    if (cpu.vendor === "intel") {
-      if (cpu.tier === 3) {
-        uniquePush(lines, "Good GPU range: GTX 10/16, RTX 20/entry RTX 30, RX 500/RX 5000 class.");
-      } else if (cpu.tier === 5) {
-        uniquePush(lines, "Good GPU range: RTX 3060/4060 to RTX 4070 class, RX 6600 to RX 7800 XT class.");
-      } else {
-        uniquePush(lines, "Good GPU range: upper RTX and Radeon tiers based on PSU/cooling envelope.");
-      }
-    }
-
-    if (cpu.pcie <= 3) {
-      uniquePush(lines, "PCIe Gen 3 CPU path: avoid lane-sensitive new GPUs if possible, or pair with strong Gen 4 board/CPU upgrade path.");
-    }
-
-    return lines;
-  };
-
-  const cpuSuggestionsFromGpu = (gpu) => {
-    const lines = [];
-    if (!gpu) {
-      return lines;
-    }
-
-    recommendCpuForGpu(gpu).forEach((line) => uniquePush(lines, line));
-
-    if (gpu.vendor === "nvidia" && gpu.generationGroup === "gtx10") {
-      uniquePush(lines, "CPU targets: i3 class, Ryzen 3 class, entry Ryzen 5 class, and 1st-gen Ryzen 7 class.");
-      if (/1080\s*TI/i.test(gpu.label)) {
-        uniquePush(lines, "Stronger target for GTX 1080 Ti: Ryzen 5 2600/3600 class or Core i5 10400+ class.");
-      }
-    }
-
-    if (gpu.isEntryRtx) {
-      uniquePush(lines, "CPU targets: Ryzen 5 5600 (non-G) or Ryzen 5 7600 class; Intel Core i5 12400+ class.");
-    }
-
-    if (gpu.vendor === "amd" && gpu.isLegacyAmd) {
-      uniquePush(lines, "CPU targets: Ryzen 3/5 or Intel i3/i5 class for balanced legacy pairings.");
-    }
-
-    if (gpu.vendor === "intel") {
-      uniquePush(lines, "CPU targets: modern ReBAR-friendly platforms (Ryzen 5000 non-G+ or Intel 10th+ preferred).");
-    }
-
-    return lines;
-  };
-
-  const boardSuggestionsFromGpu = (gpu) => {
-    const lines = [];
-    if (!gpu) {
-      return lines;
-    }
-
-    if (gpu.pcie <= 3) {
-      uniquePush(lines, "Chipset targets: B450/A520/H510/H610 class platforms are usually enough.");
-    } else if (gpu.pcie === 4) {
-      uniquePush(lines, "Chipset targets: B550/X570/B650 (AMD) or B660/B760/Z690/Z790 (Intel). ");
-    } else {
-      uniquePush(lines, "Chipset targets: B650E/X670E/X870E (AMD) or Z790/Z890 class (Intel). ");
-    }
-
-    return lines;
-  };
-
-  const cpuSuggestionsFromBoard = (board) => {
-    const lines = [];
-    if (!board) {
-      return lines;
-    }
-
-    if (board.vendor === "amd") {
-      if (board.socket === "AM4") {
-        if (["A320", "A520"].includes(board.chipset)) {
-          uniquePush(lines, "Best CPU targets: Ryzen 3, entry Ryzen 5, and carefully chosen Ryzen 7 1000/2000.");
-        }
-
-        if (board.chipset === "B450") {
-          uniquePush(lines, "Best CPU targets: Ryzen 3/5 and Ryzen 7 1000/2000 class.");
-        }
-
-        if (board.chipset === "B550") {
-          uniquePush(lines, "Best CPU targets: Ryzen 5/7/9 3000+ where PCIe 4 is desired.");
-        }
-
-        if (board.chipset === "X570") {
-          uniquePush(lines, "Best CPU targets: Ryzen 7/9 AM4 high-end pairings.");
-        }
-      } else if (board.socket === "AM5") {
-        if (board.chipset === "A620") {
-          uniquePush(lines, "Best CPU targets: Ryzen 5 7000/8000 and selected Ryzen 7 models.");
-        } else if (["B650", "B650E", "B850"].includes(board.chipset)) {
-          uniquePush(lines, "Best CPU targets: Ryzen 5/7 and many Ryzen 9 models.");
-        } else {
-          uniquePush(lines, "Best CPU targets: Ryzen 7/9 AM5 high-end stack.");
-        }
-      }
-    }
-
-    if (board.vendor === "intel") {
-      if (board.tier === "entry") {
-        uniquePush(lines, "Best CPU targets: Intel i3 and lower-power i5 non-K models.");
-      } else if (board.tier === "mid") {
-        uniquePush(lines, "Best CPU targets: Intel i5/i7 non-K and selected K models.");
-      } else {
-        uniquePush(lines, "Best CPU targets: Intel K-series, i7, and i9 class CPUs.");
-      }
-    }
-
-    return lines;
-  };
-
-  const gpuSuggestionsFromBoard = (board) => {
-    const lines = [];
-    if (!board) {
-      return lines;
-    }
-
-    if (board.pcie <= 3) {
-      uniquePush(lines, "Best GPU ranges: GTX 10/16, RTX 20, RX 400/500, Vega, RX 5000.");
-    } else if (board.pcie === 4) {
-      uniquePush(lines, "Best GPU ranges: RTX 30/40 entry-mid, RX 6000/7000, Arc A/B series.");
-    } else {
-      uniquePush(lines, "Best GPU ranges: latest RTX/Radeon stacks including PCIe 5-focused builds.");
-    }
-
-    return lines;
-  };
-
   const buildComboFromSeed = (seed) => {
     const result = {
       anchorType: seed?.type || null,
       anchorLabel: seed?.label || "",
       selectedDetails: [],
-      cpuSuggestions: [],
-      motherboardSuggestions: [],
-      gpuSuggestions: [],
-      notes: []
+      cpuRecommendation: null,
+      motherboardRecommendation: null,
+      gpuRecommendations: [],
+      notes: [],
+      benchmarkSources: BENCHMARK_SOURCES,
+      communitySources: COMMUNITY_SOURCES
     };
 
     if (!seed?.type || !seed?.label) {
@@ -1123,46 +1185,49 @@
     if (seed.type === "cpu") {
       const cpu = analyzeCpu(seed.label);
       result.selectedDetails = describeCpu(cpu);
-      result.cpuSuggestions.push("Selected CPU is the anchor component.");
-      boardSuggestionsFromCpu(cpu).forEach((line) => uniquePush(result.motherboardSuggestions, line));
-      gpuSuggestionsFromCpu(cpu).forEach((line) => uniquePush(result.gpuSuggestions, line));
+      result.motherboardRecommendation = singleMotherboardForCpu(cpu);
+      result.gpuRecommendations = singleGpuTripletForCpu(cpu);
+
+      uniquePush(result.notes, "The motherboard recommendation is a single target, not a range, to keep the build path clear.");
+      uniquePush(result.notes, "GPU recommendations are one model per vendor to reduce bottleneck variance from overpowered cards.");
       if (cpu?.isG) {
-        uniquePush(result.notes, "Ryzen G reminder: use 2 identical RAM DIMMs at high stable frequency.");
+        uniquePush(result.notes, "Ryzen G reminder: use two identical RAM DIMMs at the highest stable frequency.");
       }
     }
 
     if (seed.type === "gpu") {
       const gpu = analyzeGpu(seed.label);
       result.selectedDetails = describeGpu(gpu);
-      result.gpuSuggestions.push("Selected GPU is the anchor component.");
-      cpuSuggestionsFromGpu(gpu).forEach((line) => uniquePush(result.cpuSuggestions, line));
-      boardSuggestionsFromGpu(gpu).forEach((line) => uniquePush(result.motherboardSuggestions, line));
-      if (gpu?.pcie >= 4) {
-        uniquePush(result.notes, "For this GPU, prefer CPU + motherboard that can expose PCIe Gen 4 or Gen 5 lanes.");
+      result.cpuRecommendation = singleCpuForGpu(gpu);
+      const cpuFromRecommendation = analyzeCpu(result.cpuRecommendation?.model || "");
+      result.motherboardRecommendation = singleMotherboardForCpu(cpuFromRecommendation) || singleMotherboardForGpu(gpu);
+
+      uniquePush(result.notes, "This is a single CPU + motherboard target for the selected GPU to avoid broad ambiguous ranges.");
+      uniquePush(result.notes, "Motherboard is derived from the recommended CPU socket to avoid invalid mixes (example: AM5 CPU on AM4 B550).");
+      if (gpu?.vendor === "intel") {
+        uniquePush(result.notes, "Intel Arc note: community and Intel docs repeatedly highlight ReBAR as important for expected performance.");
       }
     }
 
     if (seed.type === "motherboard") {
       const board = analyzeMotherboard(seed);
       result.selectedDetails = describeMotherboard(board);
-      result.motherboardSuggestions.push("Selected motherboard is the anchor component.");
-      cpuSuggestionsFromBoard(board).forEach((line) => uniquePush(result.cpuSuggestions, line));
-      gpuSuggestionsFromBoard(board).forEach((line) => uniquePush(result.gpuSuggestions, line));
-      if (board?.tier === "entry") {
-        uniquePush(result.notes, "Entry chipset reminder: keep expectations aligned for VRM quality and expansion headroom.");
-      }
+      result.cpuRecommendation = singleCpuForBoard(board);
+      result.gpuRecommendations = singleGpuTripletForBoard(board);
+
+      uniquePush(result.notes, "CPU and GPU outputs are reduced to concrete single picks for each lane of choice.");
     }
 
-    if (!result.cpuSuggestions.length) {
-      uniquePush(result.cpuSuggestions, "No CPU direction available for this seed yet.");
+    if (!result.cpuRecommendation && seed.type !== "cpu") {
+      uniquePush(result.notes, "No CPU recommendation could be derived for this exact selection.");
     }
 
-    if (!result.motherboardSuggestions.length) {
-      uniquePush(result.motherboardSuggestions, "No motherboard direction available for this seed yet.");
+    if (!result.motherboardRecommendation && seed.type !== "motherboard") {
+      uniquePush(result.notes, "No motherboard recommendation could be derived for this exact selection.");
     }
 
-    if (!result.gpuSuggestions.length) {
-      uniquePush(result.gpuSuggestions, "No GPU direction available for this seed yet.");
+    if (!result.gpuRecommendations.length && seed.type !== "gpu") {
+      uniquePush(result.notes, "No GPU recommendation set could be derived for this exact selection.");
     }
 
     return result;

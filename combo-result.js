@@ -25,6 +25,87 @@ const listMarkup = (items) => {
   return `<ul>${items.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`;
 };
 
+const singlePickMarkup = (title, pick) => {
+  if (!pick) {
+    return "";
+  }
+
+  return `
+    <section class="result-card">
+      <h3>${escapeHtml(title)}</h3>
+      <p><strong>${escapeHtml(pick.model)}</strong></p>
+      <p>${escapeHtml(pick.description)}</p>
+    </section>
+  `;
+};
+
+const gpuTripletMarkup = (picks) => {
+  if (!picks || !picks.length) {
+    return "";
+  }
+
+  const cards = picks
+    .map(
+      (pick) => `
+        <article class="gpu-pick-card">
+          <h4>${escapeHtml(pick.vendor)}</h4>
+          <p><strong>${escapeHtml(pick.model)}</strong></p>
+          <p>${escapeHtml(pick.description)}</p>
+        </article>
+      `
+    )
+    .join("");
+
+  return `
+    <section class="result-card result-card-wide">
+      <h3>GPU Picks (One Per Vendor)</h3>
+      <div class="gpu-pick-grid">${cards}</div>
+    </section>
+  `;
+};
+
+const sourceListMarkup = (sources) =>
+  sources
+    .map(
+      (source) =>
+        `<li><a href="${escapeHtml(source.url)}" target="_blank" rel="noreferrer noopener">${escapeHtml(source.label)}</a></li>`
+    )
+    .join("");
+
+const referencesDropdownMarkup = (benchmarkSources, communitySources) => {
+  const benchmarkList = benchmarkSources?.length
+    ? `
+      <div class="reference-group">
+        <h4>Benchmark References</h4>
+        <ul>${sourceListMarkup(benchmarkSources)}</ul>
+      </div>
+    `
+    : "";
+
+  const communityList = communitySources?.length
+    ? `
+      <div class="reference-group">
+        <h4>Community / Forum References</h4>
+        <ul>${sourceListMarkup(communitySources)}</ul>
+      </div>
+    `
+    : "";
+
+  if (!benchmarkList && !communityList) {
+    return "";
+  }
+
+  return `
+    <section class="result-card result-card-wide">
+      <details class="reference-dropdown">
+        <summary>References</summary>
+        ${benchmarkList}
+        ${communityList}
+      </details>
+    </section>
+  `;
+};
+
 const renderComboResult = () => {
   const host = document.getElementById("combo-result");
   if (!host) {
@@ -54,31 +135,16 @@ const renderComboResult = () => {
         <p>${escapeHtml(seedLabel)}</p>
       </header>
 
-      <section class="result-card">
+      <section class="result-card result-card-wide">
         <h3>Selected Part Profile</h3>
         ${listMarkup(result.selectedDetails)}
       </section>
 
       <div class="result-grid">
-        <section class="result-card">
-          <h3>Recommended CPU Side</h3>
-          ${listMarkup(result.cpuSuggestions)}
-        </section>
-
-        <section class="result-card">
-          <h3>Recommended Motherboard Side</h3>
-          ${listMarkup(result.motherboardSuggestions)}
-        </section>
-
-        <section class="result-card">
-          <h3>Recommended GPU Side</h3>
-          ${listMarkup(result.gpuSuggestions)}
-        </section>
-
-        <section class="result-card">
-          <h3>Important Notes</h3>
-          ${listMarkup(result.notes)}
-        </section>
+        ${singlePickMarkup("Recommended CPU", result.cpuRecommendation)}
+        ${singlePickMarkup("Recommended Motherboard", result.motherboardRecommendation)}
+        ${gpuTripletMarkup(result.gpuRecommendations)}
+        ${referencesDropdownMarkup(result.benchmarkSources, result.communitySources)}
       </div>
 
       <div class="result-actions">

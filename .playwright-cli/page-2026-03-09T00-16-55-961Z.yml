@@ -1,0 +1,16 @@
+- main [ref=e2]:
+  - generic [ref=e3]:
+    - heading "Simple PC Parts Configurator" [level=1] [ref=e4]
+    - button "Start" [ref=e5] [cursor=pointer]
+  - generic:
+    - heading [level=2]: Which part do you want to select first?
+    - generic:
+      - article:
+        - button: CPU
+        - img
+      - article:
+        - button: GPU
+        - img
+      - article:
+        - button: Motherboard
+        - img
